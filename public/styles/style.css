@@ -1,0 +1,49 @@
+/* ================= */
+/*  IMPORTED FONTS   */
+/* ================= */
+@import url('https://fonts.googleapis.com/css?family=Almendra|Charmonman|Delius+Swash+Caps|Slabo+13px&display=swap');
+
+
+/* ================= */
+/*     VARIABLES     */
+/* ================= */
+:root {
+  /* fonts */
+  --title-font: 'Almendra', serif;
+  --main-font: 'Slabo 13px', serif;
+  --accent-font: 'Charmonman', cursive;
+  --header-font: 'Delius Swash Caps', cursive;
+  /* colors */
+  --dark-gray: #4d4d4d;
+  --light-gray: #DFDDD9;
+  --moss: #708C82;
+  --forest: #43593F;
+  --hunter: #58734C;
+  --foggy: #bcc8c4;
+  --golden: #ac9410;
+  --butter: #ffed8b;
+
+}
+
+/* ================= */
+/*      GENERAL      */
+/* ================= */
+
+* {
+	border: 1px solid gold;
+}
+
+body {
+  background: whitesmoke;
+  font-family: var(--main-font);
+  color: var(--dark-gray);
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+	font-family: var(--title-font);
+    color: var(--golden);
+	text-align: center;
+}

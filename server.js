@@ -44,13 +44,17 @@ app.use(session({
 
 app.use(morgan('tiny'));
 
-//====================
-// ROUTES
-//====================
-
 //==================
 // CONTROLLERS
 //==================
+const playersController = require('./controllers/players.js')
+app.use('/players', playersController)
+
+const sessionsController = require('./controllers/sessions.js')
+app.use('/sessions', sessionsController)
+
+const cardsController = require('./controllers/cards.js')
+app.use('/cards', cardsController)
 
 //==================
 // LISTENER
