@@ -1,0 +1,27 @@
+{
+  "name": "enchanted-forest",
+  "version": "1.0.0",
+  "description": "A card game that requires players to remember the locations of fairytale treasures. Based on the board game of the same name, published by Ravensburger in Germany in 1981.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dwalraven21/enchanted-forest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dwalraven21/enchanted-forest/issues"
+  },
+  "homepage": "https://github.com/dwalraven21/enchanted-forest#readme",
+  "dependencies": {
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "mongoose": "^5.7.1",
+    "morgan": "^1.9.1"
+  }
+}
