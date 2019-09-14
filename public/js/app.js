@@ -198,8 +198,10 @@ new Vue({
 		        Vue.set(this.cards, i, this.cards[randomIndex]);
 		        Vue.set(this.cards, randomIndex, temp);
 			}
-			let randomIndex = Math.floor(Math.random() * this.cards.length)
+			let randomIndex = Math.floor(Math.random() * this.cards.length);
 			this.kingCard = cards.find(card => card.id === randomIndex);
+			this.message = "Pick a card.";
+			this.message2 = "";
 		},
 
 	    flipCard: function(card){
