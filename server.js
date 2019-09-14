@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 3000;
 //===================
 //DATABASE
 //===================
-const ENCHANTED_DB = process.env.PROJECT3_DB
+const ENCHANTED_DB = process.env.ENCHANTED_DB
 
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
