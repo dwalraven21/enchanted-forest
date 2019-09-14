@@ -138,6 +138,8 @@ const players = [
 	}
 ]
 
+//default kingCard
+
 const kingCard = {
     	name: "The Frog Prince",
     	front: "images/frog-prince.jpg",
@@ -190,9 +192,6 @@ new Vue({
 		message2: ""
 	},
 	methods: {
-		newGame: function(){
-
-		},
 		shuffleDeck: function() {
 	        for(let i = this.cards.length - 1; i > 0; i--) {
 		        let randomIndex = Math.floor(Math.random() * i);
@@ -201,16 +200,14 @@ new Vue({
 		        Vue.set(this.cards, i, this.cards[randomIndex]);
 		        Vue.set(this.cards, randomIndex, temp);
 			}
+			let randomIndex = Math.floor(Math.random() * this.cards.length)
+			this.kingCard = cards.find(card => card.id === randomIndex);
 		},
 
 	    flipCard: function(card){
 	      card.flipped = !card.flipped;
 		  this.message = "You found: " + card.name + "."
-		  kingCard.name == card.name ? this.message2 = "You win the King Card!" : this.message2 = "Sorry, it's not a match."
-		},
-
-		checkForMatch: function(card) {
-			kingCard.name === event.target
+		  this.kingCard.name == card.name ? this.message2 = "You win the King Card!" : this.message2 = "Sorry, it's not a match."
 		}
 
 	}
