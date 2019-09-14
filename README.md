@@ -4,13 +4,13 @@ A card game that requires players to remember the locations of fairytale treasur
 
 ## Technology Used
 
-Front-End: HTML, CSS, SCSS, JavaScript, Vue.js
-Database: MongoDB / mongoose
-Back-End: Node.js / Express.js
+* Front-End: HTML, CSS, SCSS, JavaScript, Vue.js
+* Database: MongoDB / mongoose
+* Back-End: Node.js / Express.js
 
 ## Deployment
 
-Deployed on Heroku: https://enchanted-forest.herokuapp.com/
+* Deployed on Heroku: https://enchanted-forest.herokuapp.com/
 
 ## Acknowledgments
 

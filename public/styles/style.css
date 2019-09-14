@@ -1,7 +1,7 @@
 /* ================= */
 /*  IMPORTED FONTS   */
 /* ================= */
-@import url('https://fonts.googleapis.com/css?family=Almendra|Charmonman|Delius+Swash+Caps|Slabo+13px&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Almendra|Goudy+Old+Style|Sacramento&display=swap');
 
 
 /* ================= */
@@ -10,9 +10,8 @@
 :root {
   /* fonts */
   --title-font: 'Almendra', serif;
-  --main-font: 'Slabo 13px', serif;
-  --accent-font: 'Charmonman', cursive;
-  --header-font: 'Delius Swash Caps', cursive;
+  --main-font: 'Goudy Old Style', serif;
+  --accent-font: 'Sacramento', cursive;
   /* colors */
   --dark-gray: #4d4d4d;
   --light-gray: #DFDDD9;
@@ -20,7 +19,8 @@
   --forest: #43593F;
   --hunter: #58734C;
   --foggy: #bcc8c4;
-  --golden: #ac9410;
+  --golden: #c9ad10;
+  --darker-gold: #ac9410;
   --butter: #ffed8b;
 
 }
@@ -29,9 +29,9 @@
 /*      GENERAL      */
 /* ================= */
 
-* {
+/* * {
 	border: 1px solid gold;
-}
+} */
 
 body {
   background: whitesmoke;
@@ -46,4 +46,115 @@ h1 {
 	font-family: var(--title-font);
     color: var(--golden);
 	text-align: center;
+	font-size: 60px;
+}
+
+h1:hover {
+	text-shadow: 2px 2px 2px whitesmoke;
+	cursor: pointer;
+}
+
+header {
+	background: var(--forest);
+	color: var(--golden);
+	padding: 25px 20px;
+	margin: 0 auto;
+	z-index: 2;
+}
+
+nav {
+	font-family: var(--header-font);
+	font-size: 25px;
+	background: var(--moss);
+	color: whitesmoke;
+	border-top: 3px solid var(--darker-gold);
+	box-shadow: 5px 5px 5px var(--dark-gray);
+	padding: 15px 0px;
+	margin: 0 auto;
+
+}
+
+ul {
+	list-style: none;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+}
+
+li:hover {
+	text-shadow: 2px 2px 2px var(--darker-gold);
+	cursor: pointer;
+}
+
+button {
+	font-family: var(--main-font);
+}
+
+button:hover {
+	box-shadow: 2px 2px 2px var(--darker-gold);
+	cursor: pointer;
+}
+
+/* ================= */
+/*   Auth / UnAuth   */
+/* ================= */
+
+#unauth-buttons {
+  display: none;
+}
+
+#auth-buttons {
+	/* display: none; */
+}
+
+#login-button {
+	background-color: var(--hunter);
+	position: absolute;
+    top: 0;
+    right: 100px;
+    margin-right: 7px;
+    margin-top: 12px;
+    padding: 8px;
+    font-size: 20px;
+    color: whitesmoke;
+    border-radius: 4px;
+}
+
+#signup-button {
+    background-color: whitesmoke;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 7px;
+    margin-top: 12px;
+    padding: 8px;
+    font-size: 20px;
+    color: var(--forest);
+    border-radius: 4px;
+}
+
+#view-stats {
+	background-color: var(--forest);
+	position: absolute;
+    top: 0;
+    right: 100px;
+    margin-right: 7px;
+    margin-top: 12px;
+    padding: 8px;
+    font-size: 20px;
+    color: whitesmoke;
+    border-radius: 4px;
+}
+
+#logout {
+	background-color: whitesmoke;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 7px;
+    margin-top: 12px;
+    padding: 8px;
+    font-size: 20px;
+    color: var(--forest);
+    border-radius: 4px;
 }
