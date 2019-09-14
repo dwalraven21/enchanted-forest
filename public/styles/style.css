@@ -36,7 +36,7 @@
 body {
   background: whitesmoke;
   font-family: var(--main-font);
-  color: var(--dark-gray);
+  color: black;
   text-align: center;
   padding: 0;
   margin: 0;
@@ -97,6 +97,9 @@ button:hover {
 
 main {
 	min-height: calc(100vh - 400px);
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
 }
 
 footer {
@@ -106,6 +109,8 @@ footer {
 	color: var(--golden);
 	padding: 8px 0px;
 	margin: 0 auto;
+	border: 1px solid var(--forest);
+	margin-top: -1px;
 }
 
 footer a {
@@ -117,15 +122,15 @@ footer a {
 /* ================= */
 
 #unauth-buttons {
-  display: none;
+  /* display: none; */
 }
 
 #auth-buttons {
-	/* display: none; */
+	display: none;
 }
 
 #login-button {
-	background-color: var(--hunter);
+	background-color: var(--forest);
 	position: absolute;
     top: 0;
     right: 100px;
@@ -174,4 +179,58 @@ footer a {
     font-size: 20px;
     color: var(--forest);
     border-radius: 4px;
+}
+
+/* ================= */
+/*   PLAYER CARDS    */
+/* ================= */
+
+.player-cards {
+	background: var(--foggy);
+	padding: 0px 15px;
+	z-index: -5;
+	border: 1px solid var(--hunter);
+}
+
+.player-cards h3 {
+	font-family: var(--accent-font);
+	font-size: 30px;
+}
+
+.current-score h4 {
+	font-family: var(--main-font);
+	font-size: 30px;
+}
+/* ================= */
+/*   GAME BOARD      */
+/* ================= */
+
+#game-board {
+
+}
+
+#game-board h2 {
+	color: var(--darker-gold);
+	font-family: var(--title-font);
+}
+
+.king-card {
+	border-radius: 4px;
+	background: var(--butter);
+	border: 2px solid var(--darker-gold);
+	width: 140px;
+	margin: 0 auto;
+}
+
+.king-card img {
+	width: 120px;
+	padding: 5px;
+}
+
+#player-prompt p {
+	color: var(--darker-gold);
+	font-size: 20px;
+}
+#all-cards {
+
 }
