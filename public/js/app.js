@@ -139,7 +139,6 @@ const players = [
 ]
 
 //default kingCard
-
 const kingCard = {
     	name: "The Frog Prince",
     	front: "images/frog-prince.jpg",
@@ -187,6 +186,7 @@ new Vue({
 		showSignup: false,
 		showStats: false,
 		cards: cards,
+		players: players,
 		kingCard: kingCard,
 		message: "Pick a card.",
 		message2: ""
@@ -208,6 +208,7 @@ new Vue({
 	      card.flipped = !card.flipped;
 		  this.message = "You found: " + card.name + "."
 		  this.kingCard.name == card.name ? this.message2 = "You win the King Card!" : this.message2 = "Sorry, it's not a match."
+		  setTimeout(() => card.flipped = !card.flipped, 2500);
 		}
 
 	}
