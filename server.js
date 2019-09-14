@@ -23,7 +23,7 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 
 // Connect to Mongo
-mongoose.connect(ENCHANTED_DB ,  { useNewUrlParser: true});
+mongoose.connect(ENCHANTED_DB,  { useNewUrlParser: true});
 
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
