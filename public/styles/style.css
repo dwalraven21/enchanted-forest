@@ -276,7 +276,6 @@ footer a {
 	border: 2px solid var(--golden);
     cursor: pointer;
     box-shadow: 5px 5px 5px var(--dark-gray);
-    will-change: transform;
   }
 
 .flip-enter-active {

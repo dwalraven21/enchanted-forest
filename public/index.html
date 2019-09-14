@@ -150,9 +150,9 @@
 					<div id="all-cards">
 					<transition-group name="shuffle" tag="div" class="row">
 						<div v-on:click="flipCard(card)" v-for="card in cards" :key="card.id">
-						<transition name="flip">
-					          <img v-if="!card.flipped" class="card"  :src="card.back">
-					          <img v-else class="card" :src="card.front">
+						<transition name="flip" tag="div">
+					          <img v-if="!card.flipped" class="card" key="back" :src="card.back">
+					          <img v-else class="card" key="front" :src="card.front">
 					        </transition>
 						</transition-group>
 					</div>
