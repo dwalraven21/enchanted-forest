@@ -142,8 +142,6 @@ const players = [
 const kingCard = {
     	name: "The Frog Prince",
     	front: "images/frog-prince.jpg",
-    	back: "images/back-of-card.png",
-    	flipped: false
     }
 
 // register modal component
@@ -205,9 +203,27 @@ new Vue({
 		},
 
 	    flipCard: function(card){
+		// card back is revealed
 	      card.flipped = !card.flipped;
 		  this.message = "You found: " + card.name + "."
-		  this.kingCard.name == card.name ? this.message2 = "You win the King Card!" : this.message2 = "Sorry, it's not a match."
+
+		  // if card is a match, let player know
+		  if (this.kingCard.name == card.name) {
+			  this.message2 = "You win the King Card!"
+
+			  // change the king card
+			  let randomIndex = Math.floor(Math.random() * this.cards.length)
+			  this.kingCard = cards.find(newCard => newCard.id === randomIndex)
+
+			  // wait 2 seconds before announcing new card
+			  setTimeout(() =>
+			  this.message = "The new king card is: " + this.kingCard.name,
+			  2000)
+			  setTimeout(() => this.message2 = "", 2000)
+
+		  } else {
+			this.message2 = "Sorry, it's not a match."
+		  }
 		  setTimeout(() => card.flipped = !card.flipped, 2500);
 		}
 
