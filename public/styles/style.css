@@ -283,7 +283,7 @@ footer a {
 .flip-enter, .flip-leave {
   transform: rotateY(180deg);
   opacity: 0;
-
+}
 /* ================= */
 /*  VUE MODEL        */
 /* ================= */
