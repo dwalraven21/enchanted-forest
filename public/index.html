@@ -14,7 +14,10 @@
 		<link rel="stylesheet" href="styles/style.css">
 	</head>
 	<body>
-		<!-- template for the modal component -->
+		<!-- ==================
+				TEMPLATES
+		======================= -->
+		<!-- Models Template -->
 		<script type="text/x-template" id="modal-template">
 		  <transition name="modal">
 		    <div class="modal-mask">
@@ -41,21 +44,29 @@
 		  </transition>
 		</script>
 
-		<!-- USE VUE APP  -->
+		<!-- ==================
+				USE VUE APP
+		======================= -->
 		<div id="app">
-			<!-- HEADER  -->
+			<!-- ==================
+					HEADER
+			======================= -->
 			<header>
 				<h1>Enchanted Forest</h1>
+				<!-- Unauth View -->
 				<div id='unauth-buttons'>
-					<button id='login-button'>Log In</button>
-					<button id='signup-button'>Sign Up</button>
+					<button id='login-button' @click="showLogin = true">Log In</button>
+					<button id='signup-button' @click="showSignup = true">Sign Up</button>
 				</div>
+				<!-- Auth View -->
 				<div id='auth-buttons'>
-					<button id='view-stats'>View My Stats</button>
+					<button id='view-stats' @click="showStats = true">View My Stats</button>
 					<button id='logout'>Log Out</button>
 				</div>
 			</header>
-			<!-- NAV  -->
+			<!-- ==================
+					NAV
+			======================= -->
 			<nav>
 				<ul>
 					<li id="show-about" @click="showAbout = true">About</li>
@@ -63,25 +74,48 @@
 					<li>Start New Game</li>
 				</ul>
 			</nav>
-			<modal v-if="showRules" @close="showRules = false">
-			  <h3 slot="header">Game Rules</h3>
-			  <p slot="body">
-				On your turn, select a card to reveal it’s hidden
-				fairytale character or item.</br></br>
-				If your card matches the king card, at the top of the screen, you keep the king card. The card you selected goes back into the position where you found it and a new king card is revealed.</br></br>
-				If you correctly matched the king card, you get another turn, otherwise, your turn is over and the next player gets a chance to guess where the king card is.</br></br>
-				Pay attention to where each item is, as it could be on the next king card.</br></br>
-				Whoever collects 8 king cards first, wins the crown!
-				</p>
-			</modal>
-			<modal v-if="showAbout" @close="showAbout = false">
-			  <h3 slot="header">About</h3>
-			  <p slot="body">
-				Enchanted Forest is a card game that requires players to remember the locations of fairytale treasures. This project is based on the board game of the same name, published by Ravensburger in Germany in 1981.</br></br>
-				All artwork on the cards was taken (with permission) from the gallery of artist, Liiga Klavina.</br></br>
-				Check out her full gallery at <a target="_blank" href="https://www.deviantart.com/liigaklavina/gallery">deviantart.com/liigaklavina</a>
-				</p>
-			</modal>
+			<!-- ==================
+					MODELS
+		  	======================= -->
+			<div id="models">
+				<modal v-if="showRules" @close="showRules = false">
+				  <h3 slot="header">Game Rules</h3>
+				  <p slot="body">
+					On your turn, select a card to reveal it’s hidden
+					fairytale character or item.</br></br>
+					If your card matches the king card, at the top of the screen, you keep the king card. The card you selected goes back into the position where you found it and a new king card is revealed.</br></br>
+					If you correctly matched the king card, you get another turn, otherwise, your turn is over and the next player gets a chance to guess where the king card is.</br></br>
+					Pay attention to where each item is, as it could be on the next king card.</br></br>
+					Whoever collects 8 king cards first, wins the crown!
+					</p>
+				</modal>
+				<modal v-if="showAbout" @close="showAbout = false">
+				  <h3 slot="header">About</h3>
+				  <p slot="body">
+					Enchanted Forest is a card game that requires players to remember the locations of fairytale treasures. This project is based on the board game of the same name, published by Ravensburger in Germany in 1981.</br></br>
+					All artwork on the cards was taken (with permission) from the gallery of artist, Liiga Klavina.</br></br>
+					Check out her full gallery at <a target="_blank" href="https://www.deviantart.com/liigaklavina/gallery">deviantart.com/liigaklavina</a>
+					</p>
+				</modal>
+				<modal v-if="showLogin" @close="showLogin = false">
+				  <h3 slot="header">Log In</h3>
+				  <p slot="body">
+				 	Placeholder Text
+				  </p>
+				</modal>
+				<modal v-if="showSignup" @close="showSignup = false">
+				  <h3 slot="header">Sign Up</h3>
+				  <p slot="body">
+				 	Placeholder Text
+				  </p>
+				</modal>
+				<modal v-if="showStats" @close="showStats = false">
+				  <h3 slot="header">Player Stats</h3>
+				  <p slot="body">
+				 	Placeholder Text
+				  </p>
+				</modal>
+			</div>
 			<main>
 			<!-- GAME PAGE -->
 				<!-- PLAYER CARDS -->
@@ -92,7 +126,8 @@
 					<div class='collected-cards'>
 					</div>
 					<!-- LEADER STATUS -->
-					<div class='crown'>
+					<div v-if="showStats" class='crown'>
+						<img src="images/crown.png" alt="">
 					</div>
 					<!-- SCORE -->
 					<div class='current-score'>
@@ -136,7 +171,7 @@
 			</footer>
 		</div>
 	<!-- VUE  -->
-	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<!-- app.js -->
 	<script src="js/app.js"></script>
 	</body>

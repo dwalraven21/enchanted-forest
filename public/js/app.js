@@ -147,14 +147,23 @@ const players = [
 
 // register modal component
 Vue.component('modal', {
-  template: '#modal-template'
+	template: '#modal-template'
 })
 
 // start app
 new Vue({
-  el: '#app',
-  data: {
-    showRules: false,
-	showAbout: false
-  }
+	el: '#app',
+	data: {
+		showRules: false,
+		showAbout: false,
+		showLogin: false,
+		showSignup: false,
+		showStats: false,
+		cards: cards
+	},
+	methods: {
+	    toggleCard: function(card){
+	      card.flipped = !card.flipped;
+	    }
+	}
 })

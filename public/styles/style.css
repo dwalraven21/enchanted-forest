@@ -49,10 +49,9 @@ h1 {
 	font-size: 60px;
 }
 
-h1:hover {
+/* h1:hover {
 	text-shadow: 2px 2px 2px whitesmoke;
-	cursor: pointer;
-}
+} */
 
 header {
 	background: var(--forest);
@@ -213,6 +212,10 @@ footer a {
 .current-score h4 {
 	font-family: var(--main-font);
 	font-size: 30px;
+}
+
+.crown img {
+	width: 50px;
 }
 /* ================= */
 /*   GAME BOARD      */
