@@ -139,16 +139,17 @@
 					<!-- KING CARD  -->
 					<h2>King Card</h2>
 					<div class="king-card">
-						<img src="images/frog-prince.jpg">
+						<img :src="kingCard.front">
 					</div>
 					<!-- PLAYER PROMPT  -->
 					<div id="player-prompt">
-						<p>Player 1: Pick A Card</p>
+						<p>{{message}}</p>
+						<p>{{message2}}</p>
 					</div>
 					<!-- ALL CARDS  -->
 					<div id="all-cards">
 					<div class="row">
-						<div v-on:click="toggleCard(card)" v-for="(card, index) in cards">
+						<div v-on:click="flipCard(card)" v-for="(card, index) in cards">
 					        <transition name="flip">
 					          <img v-if="!card.flipped" class="card" :src="card.back">
 					          <img v-else class="card" :src="card.front">

@@ -109,14 +109,7 @@ const cards = [
 const players = [
 	{
 		name: 'Player 1',
-		hand: [
-			{
-			name: "The Golden Ball",
-			front: "images/the-golden-ball.jpg",
-			back: "images/back-of-card.png",
-			flipped: false
-		}
-	],
+		hand: [],
 		score: 0,
 		leader: false
 	},
@@ -127,11 +120,24 @@ const players = [
 		leader: false
 	}
 ]
+
+const kingCard = {
+    	name: "The Frog Prince",
+    	front: "images/frog-prince.jpg",
+    	back: "images/back-of-card.png",
+    	flipped: false
+    }
+
+// register modal component
+Vue.component('modal', {
+	template: '#modal-template'
+})
+
 // When player clicks start new game
 	// game cards are shuffled and backs are displayed
 	// A random king card is displayed
 	// player hands are reset
-	// propmpt player to choose a card
+	// prompt player to choose a card
 
 // when player clicks a card
 		// card is flipped
@@ -152,11 +158,6 @@ const players = [
 				// alternate player's turn
 				// propmpt player to choose a card
 
-// register modal component
-Vue.component('modal', {
-	template: '#modal-template'
-})
-
 // start app
 new Vue({
 	el: '#app',
@@ -166,14 +167,23 @@ new Vue({
 		showLogin: false,
 		showSignup: false,
 		showStats: false,
-		cards: cards
+		cards: cards,
+		kingCard: kingCard,
+		message: "Pick a card.",
+		message2: ""
 	},
 	methods: {
-	    toggleCard: function(card){
-	      card.flipped = !card.flipped;
-	  },
-	  addToHand: function(card){
+		newGame: function(){
 
-	  }
+		},
+	    flipCard: function(card){
+	      card.flipped = !card.flipped;
+		  this.message = "You found " + card.name + "."
+		  kingCard.name == card.name ? this.message2 = "You win the king card!" : this.message2 = "Sorry, it's not a match."
+		},
+		checkForMatch: function(card) {
+			kingCard.name === event.target
+		}
+
 	}
 })
