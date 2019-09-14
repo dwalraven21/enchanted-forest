@@ -254,6 +254,13 @@ footer a {
 	flex-flow: row wrap;
 	justify-content: center;
 }
+/* ================= */
+/*  SHUFFLE DECK     */
+/* ================= */
+
+.shuffle-move {
+  transition: transform 1s;
+}
 
 /* ================= */
 /*  CARD FLIP        */

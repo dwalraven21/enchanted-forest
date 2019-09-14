@@ -71,7 +71,7 @@
 				<ul>
 					<li id="show-about" @click="showAbout = true">About</li>
 					<li id="show-rules" @click="showRules = true">Game Rules</li>
-					<li>Start New Game</li>
+					<li id="new-game" @click="shuffleDeck">Start New Game</li>
 				</ul>
 			</nav>
 			<!-- ==================
@@ -148,15 +148,15 @@
 					</div>
 					<!-- ALL CARDS  -->
 					<div id="all-cards">
-					<div class="row">
-						<div v-on:click="flipCard(card)" v-for="(card, index) in cards">
-					        <transition name="flip">
-					          <img v-if="!card.flipped" class="card" :src="card.back">
+					<transition-group name="shuffle" tag="div" class="row">
+						<div v-on:click="flipCard(card)" v-for="card in cards" :key="card.id">
+						<transition name="flip">
+					          <img v-if="!card.flipped" class="card"  :src="card.back">
 					          <img v-else class="card" :src="card.front">
 					        </transition>
-						</div>
+						</transition-group>
 					</div>
-					</div>
+				</div>
 				</div>
 				<!-- PLAYER CARDS -->
 				<div class="player-cards">
