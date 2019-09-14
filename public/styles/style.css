@@ -260,7 +260,7 @@ footer a {
 /* ================= */
 .card {
 	border-radius: 7px;
-	background: whitesmoke;
+	background: white;
 	border: 2px solid var(--darker-gold);
 	width: 120px;
 	height: 180px;
