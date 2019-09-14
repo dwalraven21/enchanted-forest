@@ -81,7 +81,7 @@ ul {
 	justify-content: space-around;
 }
 
-li:hover {
+li:hover, a:hover {
 	text-shadow: 2px 2px 2px var(--darker-gold);
 	cursor: pointer;
 }
@@ -95,6 +95,23 @@ button:hover {
 	cursor: pointer;
 }
 
+main {
+	min-height: calc(100vh - 400px);
+}
+
+footer {
+	font-family: var(--main-font);
+	font-size: 20px;
+	background: var(--forest);
+	color: var(--golden);
+	padding: 8px 0px;
+	margin: 0 auto;
+}
+
+footer a {
+	text-decoration: none;
+	color: whitesmoke;
+}
 /* ================= */
 /*   Auth / UnAuth   */
 /* ================= */
