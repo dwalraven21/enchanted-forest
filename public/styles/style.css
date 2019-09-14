@@ -230,17 +230,15 @@ footer a {
 	font-family: var(--title-font);
 }
 
-.king-card {
-	border-radius: 4px;
+.king-card img {
+	border-radius: 7px;
 	background: var(--butter);
 	border: 2px solid var(--darker-gold);
-	width: 140px;
-	margin: 0 auto;
-}
-
-.king-card img {
 	width: 120px;
-	padding: 5px;
+	padding: 15px;
+	margin: 5px;
+	border: 2px solid var(--golden);
+	box-shadow: 5px 5px 5px var(--dark-gray);
 }
 
 #player-prompt p {
@@ -250,6 +248,34 @@ footer a {
 #all-cards {
 
 }
+
+/* ================= */
+/*  CARD FLIP        */
+/* ================= */
+.card {
+	border-radius: 7px;
+	background: whitesmoke;
+	border: 2px solid var(--darker-gold);
+	width: 120px;
+	padding: 15px;
+	margin: 5px;
+	border: 2px solid var(--golden);
+    cursor: pointer;
+    box-shadow: 5px 5px 5px var(--dark-gray);
+    will-change: transform;
+  }
+
+.flip-enter-active {
+  transition: all 0.4s ease;
+}
+
+.flip-leave-active {
+  display: none;
+}
+
+.flip-enter, .flip-leave {
+  transform: rotateY(180deg);
+  opacity: 0;
 
 /* ================= */
 /*  VUE MODEL        */

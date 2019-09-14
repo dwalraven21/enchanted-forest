@@ -92,14 +92,14 @@ const cards = [
 },
 {
 	name: "Mother Willow",
-	front: "../public/images/willow.jpg",
-	back: "../public/images/lost.jpg",
+	front: "images/willow.jpg",
+	back: "images/lost.jpg",
 	flipped: false
 },
 {
 	name: "The Wolf",
-	front: "../public/images/wolf.jpg",
-	back: "../public/images/lost.jpg",
+	front: "images/wolf.jpg",
+	back: "images/lost.jpg",
 	flipped: false
 }
 ];
