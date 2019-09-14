@@ -249,6 +249,12 @@ footer a {
 
 }
 
+.row {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
 /* ================= */
 /*  CARD FLIP        */
 /* ================= */
@@ -257,8 +263,9 @@ footer a {
 	background: whitesmoke;
 	border: 2px solid var(--darker-gold);
 	width: 120px;
+	height: 180px;
 	padding: 15px;
-	margin: 5px;
+	margin: 10px;
 	border: 2px solid var(--golden);
     cursor: pointer;
     box-shadow: 5px 5px 5px var(--dark-gray);
