@@ -40,8 +40,8 @@ cards.get('/', (req, res) => {
 // GET A SPECIFIC CARD
 //==========================
 cards.get('/:id', (req, res) => {
-	Cards.findById(req.params.id, (err, foundHome) => {
-		res.json(foundHome)
+	Cards.findById(req.params.id, (err, foundCard) => {
+		res.json(foundCard)
 	})
 })
 

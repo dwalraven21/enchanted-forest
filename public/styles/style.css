@@ -1,7 +1,7 @@
 /* ================= */
 /*  IMPORTED FONTS   */
 /* ================= */
-@import url('https://fonts.googleapis.com/css?family=Almendra|Goudy+Old+Style|Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Almendra|Josefin+Slab|Sacramento&display=swap');
 
 
 /* ================= */
@@ -10,7 +10,7 @@
 :root {
   /* fonts */
   --title-font: 'Almendra', serif;
-  --main-font: 'Goudy Old Style', serif;
+  --main-font: 'Josefin Slab', serif;
   --accent-font: 'Sacramento', cursive;
   /* colors */
   --dark-gray: #4d4d4d;
@@ -57,7 +57,7 @@ h1:hover {
 header {
 	background: var(--forest);
 	color: var(--golden);
-	padding: 25px 20px;
+	padding: 15px;
 	margin: 0 auto;
 	z-index: 2;
 }
@@ -68,8 +68,9 @@ nav {
 	background: var(--moss);
 	color: whitesmoke;
 	border-top: 3px solid var(--darker-gold);
+	border-bottom: 1px solid var(--hunter);
 	box-shadow: 5px 5px 5px var(--dark-gray);
-	padding: 15px 0px;
+	padding: 5px;
 	margin: 0 auto;
 
 }
@@ -78,7 +79,19 @@ ul {
 	list-style: none;
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: space-around;
+	justify-content: space-evenly;
+}
+
+li {
+	margin: 5px auto;
+	text-align: center;
+	width: 30%;
+	align-content: center;
+
+}
+
+li:first-of-type {
+	margin-left: -30px;
 }
 
 li:hover, a:hover {
@@ -233,4 +246,89 @@ footer a {
 }
 #all-cards {
 
+}
+
+/* ================= */
+/*  VUE MODEL        */
+/* ================= */
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  display: table;
+  transition: opacity .3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.modal-container {
+  width: 500px;
+  margin: 0px auto;
+  padding: 60px;
+  background-color: whitesmoke;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+  transition: all .3s ease;
+}
+
+.modal-header h3 {
+  margin-top: 0;
+  color: var(--darker-gold);
+  font-family: var(--main-font);
+  font-size: 40px;
+}
+
+.modal-body p {
+	text-align: left;
+	font-family: var(--main-font);
+	font-size: 20px;
+	line-height: 30px;
+}
+
+.modal-body a {
+	color: var(--hunter);
+}
+
+.modal-body {
+  margin: 20px 0;
+}
+
+.modal-default-button {
+  float: right;
+  color: var(--darker-gold);
+  font-family: var(--main-font);
+  font-size: 20px;
+  border-radius: 4px;
+  border: 2px solid var(--darker-gold);
+  padding: 10px;
+}
+
+/*
+ * The following styles are auto-applied to elements with
+ * transition="modal" when their visibility is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }

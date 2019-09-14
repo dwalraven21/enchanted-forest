@@ -14,6 +14,33 @@
 		<link rel="stylesheet" href="styles/style.css">
 	</head>
 	<body>
+		<!-- template for the modal component -->
+		<script type="text/x-template" id="modal-template">
+		  <transition name="modal">
+		    <div class="modal-mask">
+		      <div class="modal-wrapper">
+		        <div class="modal-container">
+		          <div class="modal-header">
+		            <slot name="header">
+		            </slot>
+		          </div>
+		          <div class="modal-body">
+		            <slot name="body">
+		            </slot>
+		          </div>
+		          <div class="modal-footer">
+		            <slot name="footer">
+		              <button class="modal-default-button" @click="$emit('close')">
+		                Close
+		              </button>
+		            </slot>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+		  </transition>
+		</script>
+
 		<!-- USE VUE APP  -->
 		<div id="app">
 			<!-- HEADER  -->
@@ -31,11 +58,30 @@
 			<!-- NAV  -->
 			<nav>
 				<ul>
-					<li>About</li>
-					<li>Instructions</li>
+					<li id="show-about" @click="showAbout = true">About</li>
+					<li id="show-rules" @click="showRules = true">Game Rules</li>
 					<li>Start New Game</li>
 				</ul>
 			</nav>
+			<modal v-if="showRules" @close="showRules = false">
+			  <h3 slot="header">Game Rules</h3>
+			  <p slot="body">
+				On your turn, select a card to reveal it’s hidden
+				fairytale character or item.</br></br>
+				If your card matches the king card, at the top of the screen, you keep the king card. The card you selected goes back into the position where you found it and a new king card is revealed.</br></br>
+				If you correctly matched the king card, you get another turn, otherwise, your turn is over and the next player gets a chance to guess where the king card is.</br></br>
+				Pay attention to where each item is, as it could be on the next king card.</br></br>
+				Whoever collects 8 king cards first, wins the crown!
+				</p>
+			</modal>
+			<modal v-if="showAbout" @close="showAbout = false">
+			  <h3 slot="header">About</h3>
+			  <p slot="body">
+				Enchanted Forest is a card game that requires players to remember the locations of fairytale treasures. This project is based on the board game of the same name, published by Ravensburger in Germany in 1981.</br></br>
+				All artwork on the cards was taken (with permission) from the gallery of artist, Liiga Klavina.</br></br>
+				Check out her full gallery at <a target="_blank" href="https://www.deviantart.com/liigaklavina/gallery">deviantart.com/liigaklavina</a>
+				</p>
+			</modal>
 			<main>
 			<!-- GAME PAGE -->
 				<!-- PLAYER CARDS -->
@@ -86,6 +132,7 @@
 			</main>
 			<footer>
 				<p>Created with &hearts; by Danielle Walraven &copy; 2019 &dash; <a target="_blank" href="https://github.com/dwalraven21/enchanted-forest">View on GitHub</a></p>
+				<p>All artwork on the cards is by artist, <a target="_blank" href="https://www.deviantart.com/liigaklavina/gallery">Liiga Klavina</a>.</p>
 			</footer>
 		</div>
 	<!-- VUE  -->
