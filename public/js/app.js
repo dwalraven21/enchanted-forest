@@ -508,7 +508,7 @@ new Vue({
 					self.message = "The new king card is " + self.kingCard.name;
 					card.flipped = !card.flipped
 					self.message2 = "Pick a card."
-				}, 2000)
+				}, 1000)
 			  }
 
 		  // if card is not a match, let player know
@@ -526,7 +526,7 @@ new Vue({
 				self.message = "Pick a card."
 				self.message2 = '';
 
-			}, 2000);
+			}, 1000);
 		  }
 		}
 

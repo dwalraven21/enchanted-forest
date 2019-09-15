@@ -126,16 +126,17 @@
 					<div v-if='player1.leader' class='crown'>
 						<img src="images/crown.png" alt="leader status">
 					</div>
+					<!-- SCORE -->
+					<div class='current-score'>
+						<h4> {{player1.score}} / 8 Cards</h4>
+					</div>
 					<!-- CARDS -->
 					<div v-if='player1.hand.length > 0'>
 						<div class='collected-cards' v-for="card in player1.hand" :key="card.id">
 							<img class="king-card" :src="card.front">
 						</div>
 					</div>
-					<!-- SCORE -->
-					<div class='current-score'>
-						<h4> {{player1.score}} / 8 Cards</h4>
-					</div>
+
 				</div>
 				<!-- GAME BOARD  -->
 				<div id="game-board">
@@ -169,16 +170,17 @@
 					<div v-if='player2.leader' class='crown'>
 						<img src="images/crown.png" alt="leader status">
 					</div>
+					<!-- SCORE -->
+					<div class='current-score'>
+						<h4> {{player2.score}} / 8 Cards</h4>
+					</div>
 					<!-- CARDS -->
 					<div v-if='player2.hand.length > 0'>
 						<div class='collected-cards' v-for="card in player2.hand" :key="card.id">
 							<img class="king-card" :src="card.front">
 						</div>
 					</div>
-					<!-- SCORE -->
-					<div class='current-score'>
-						<h4> {{player2.score}} / 8 Cards</h4>
-					</div>
+
 				</div>
 			</main>
 			<footer>
