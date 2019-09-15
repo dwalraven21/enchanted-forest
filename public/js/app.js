@@ -195,32 +195,38 @@ new Vue({
 			  this.message2 = "You win the King Card!"
 
 			  // change the king card
-			  // * REMOVE old kingCard from the deck
 			  let randomIndex = Math.floor(Math.random() * this.cards.length)
 			  this.kingCard = cards.find(newCard => newCard.id === randomIndex)
 
-			  // card is added to user hand
+			  // card is added to user hand & removed from cards array
 			  // player score goes up by one
 			  // check if player is the leader
-				  // if so display crown
-				  // if not, don't display crown
 			  // check if score is 8
 				  // if score is 8, player wins!
-			// if not, prompt player to choose again
+			  // if not, prompt player to choose again
 
 			  // wait 2 seconds before announcing new card
-			  setTimeout(() =>
-			  this.message = "The new king card is: " + this.kingCard.name,
-			  2000)
-			  setTimeout(() => this.message2 = "", 2000)
+			    setTimeout(function(){
+				this.message = "The new king card is " + this.kingCard.name;
+				this.message2 = "Pick a card."
+				}, 2000)
 
 		  // if card is not a match, let player know
 		  } else {
 			this.message2 = "Sorry, it's not a match."
-			// alternate player's turn
+			// wait 2 seconds, then alternate player's turn
+			setTimeout(function(){
+				// if (this.playerTurn === player1.name){
+				// 	this.playerTurn = player2.name
+				// } else {
+				// 	this.playerTurn = player1.name
+				// }
+				//flip card and prompt player to pick a card
+				card.flipped = !card.flipped
+				this.message = "Pick a card."
+
+			}, 2000);
 		  }
-		  // wait 2.5 seconds before flipping card back over
-		  setTimeout(() => card.flipped = !card.flipped, 2500);
 		}
 
 	},
