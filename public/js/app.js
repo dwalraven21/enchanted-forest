@@ -2,6 +2,7 @@
 const cards = [
 {
 	id: 0,
+	key: 0,
 	name: "The Beast",
 	front: "images/beast.jpg",
 	back: "images/back-of-card.png",
@@ -9,6 +10,7 @@ const cards = [
 },
 {
 	id: 1,
+	key: 1,
 	name: "The Mermaid",
 	front: "images/bride-of-the-sea.jpg",
 	back: "images/back-of-card.png",
@@ -16,6 +18,7 @@ const cards = [
 },
 {
 	id: 2,
+	key: 2,
 	name: "The Flower Queen",
 	front: "images/flower-queen.jpg",
 	back: "images/back-of-card.png",
@@ -23,6 +26,7 @@ const cards = [
 },
 {
 	id: 3,
+	key: 3,
 	name: "The Frog Prince",
 	front: "images/frog-prince.jpg",
 	back: "images/back-of-card.png",
@@ -30,6 +34,7 @@ const cards = [
 },
 {
 	id: 4,
+	key: 4,
 	name: "The Glass Slipper",
 	front: "images/glass-slipper.jpg",
 	back: "images/back-of-card.png",
@@ -37,6 +42,7 @@ const cards = [
 },
 {
 	id: 5,
+	key: 5,
 	name: "The Lady In White",
 	front: "images/lady-in-white.jpg",
 	back: "images/back-of-card.png",
@@ -44,6 +50,7 @@ const cards = [
 },
 {
 	id: 6,
+	key: 6,
 	name: "The Night Owl",
 	front: "images/night-owl.jpg",
 	back: "images/back-of-card.png",
@@ -51,6 +58,7 @@ const cards = [
 },
 {
 	id: 7,
+	key: 7,
 	name: "Persephone",
 	front: "images/persephone.jpg",
 	back: "images/back-of-card.png",
@@ -58,6 +66,7 @@ const cards = [
 },
 {
 	id: 8,
+	key: 8,
 	name: "The Walraven",
 	front: "images/raven-flight.jpg",
 	back: "images/back-of-card.png",
@@ -65,6 +74,7 @@ const cards = [
 },
 {
 	id: 9,
+	key: 9,
 	name: "The Seelie Queen",
 	front: "images/seelie-queen.jpg",
 	back: "images/back-of-card.png",
@@ -72,6 +82,7 @@ const cards = [
 },
 {
 	id: 10,
+	key: 10,
 	name: "The Shield Maiden",
 	front: "images/shield-maiden.jpg",
 	back: "images/back-of-card.png",
@@ -79,6 +90,7 @@ const cards = [
 },
 {
 	id: 11,
+	key: 11,
 	name: "The Swan Princess",
 	front: "images/swan-princess.jpg",
 	back: "images/back-of-card.png",
@@ -86,6 +98,7 @@ const cards = [
 },
 {
 	id: 12,
+	key: 12,
 	name: "The Golden Ball",
 	front: "images/the-golden-ball.jpg",
 	back: "images/back-of-card.png",
@@ -93,6 +106,7 @@ const cards = [
 },
 {
 	id: 13,
+	key: 13,
 	name: "The White Dove",
 	front: "images/white-dove.jpg",
 	back: "images/back-of-card.png",
@@ -100,6 +114,7 @@ const cards = [
 },
 {
 	id: 14,
+	key: 14,
 	name: "The White Stag",
 	front: "images/white-stag.jpg",
 	back: "images/back-of-card.png",
@@ -107,6 +122,7 @@ const cards = [
 },
 {
 	id: 15,
+	key: 15,
 	name: "Mother Willow",
 	front: "images/willow.jpg",
 	back: "images/back-of-card.png",
@@ -114,6 +130,7 @@ const cards = [
 },
 {
 	id: 16,
+	key: 16,
 	name: "The Wolf",
 	front: "images/wolf.jpg",
 	back: "images/back-of-card.png",
@@ -125,6 +142,7 @@ const cards = [
 const kingDeck = [
 {
 	id: 0,
+	key: 17,
 	name: "The Beast",
 	front: "images/beast.jpg",
 	back: "images/back-of-card.png",
@@ -132,6 +150,7 @@ const kingDeck = [
 },
 {
 	id: 1,
+	key: 18,
 	name: "The Mermaid",
 	front: "images/bride-of-the-sea.jpg",
 	back: "images/back-of-card.png",
@@ -139,6 +158,7 @@ const kingDeck = [
 },
 {
 	id: 2,
+	key: 19,
 	name: "The Flower Queen",
 	front: "images/flower-queen.jpg",
 	back: "images/back-of-card.png",
@@ -146,6 +166,7 @@ const kingDeck = [
 },
 {
 	id: 3,
+	key: 20,
 	name: "The Frog Prince",
 	front: "images/frog-prince.jpg",
 	back: "images/back-of-card.png",
@@ -153,6 +174,7 @@ const kingDeck = [
 },
 {
 	id: 4,
+	key: 21,
 	name: "The Glass Slipper",
 	front: "images/glass-slipper.jpg",
 	back: "images/back-of-card.png",
@@ -160,6 +182,7 @@ const kingDeck = [
 },
 {
 	id: 5,
+	key: 22,
 	name: "The Lady In White",
 	front: "images/lady-in-white.jpg",
 	back: "images/back-of-card.png",
@@ -167,6 +190,7 @@ const kingDeck = [
 },
 {
 	id: 6,
+	key: 23,
 	name: "The Night Owl",
 	front: "images/night-owl.jpg",
 	back: "images/back-of-card.png",
@@ -174,6 +198,7 @@ const kingDeck = [
 },
 {
 	id: 7,
+	key: 24,
 	name: "Persephone",
 	front: "images/persephone.jpg",
 	back: "images/back-of-card.png",
@@ -181,6 +206,7 @@ const kingDeck = [
 },
 {
 	id: 8,
+	key: 25,
 	name: "The Walraven",
 	front: "images/raven-flight.jpg",
 	back: "images/back-of-card.png",
@@ -188,6 +214,7 @@ const kingDeck = [
 },
 {
 	id: 9,
+	key: 26,
 	name: "The Seelie Queen",
 	front: "images/seelie-queen.jpg",
 	back: "images/back-of-card.png",
@@ -195,6 +222,7 @@ const kingDeck = [
 },
 {
 	id: 10,
+	key: 27,
 	name: "The Shield Maiden",
 	front: "images/shield-maiden.jpg",
 	back: "images/back-of-card.png",
@@ -202,6 +230,7 @@ const kingDeck = [
 },
 {
 	id: 11,
+	key: 28,
 	name: "The Swan Princess",
 	front: "images/swan-princess.jpg",
 	back: "images/back-of-card.png",
@@ -209,6 +238,7 @@ const kingDeck = [
 },
 {
 	id: 12,
+	key: 29,
 	name: "The Golden Ball",
 	front: "images/the-golden-ball.jpg",
 	back: "images/back-of-card.png",
@@ -216,6 +246,7 @@ const kingDeck = [
 },
 {
 	id: 13,
+	key: 30,
 	name: "The White Dove",
 	front: "images/white-dove.jpg",
 	back: "images/back-of-card.png",
@@ -223,6 +254,7 @@ const kingDeck = [
 },
 {
 	id: 14,
+	key: 31,
 	name: "The White Stag",
 	front: "images/white-stag.jpg",
 	back: "images/back-of-card.png",
@@ -230,6 +262,7 @@ const kingDeck = [
 },
 {
 	id: 15,
+	key: 32,
 	name: "Mother Willow",
 	front: "images/willow.jpg",
 	back: "images/back-of-card.png",
@@ -237,6 +270,7 @@ const kingDeck = [
 },
 {
 	id: 16,
+	key: 33,
 	name: "The Wolf",
 	front: "images/wolf.jpg",
 	back: "images/back-of-card.png",
@@ -286,7 +320,8 @@ new Vue({
 		player2: player2,
 		playerTurn: player1.name,
 		message: "Pick a card.",
-		message2: ""
+		message2: "",
+		randomIndex: 0,
 	},
 	methods: {
 		// When player clicks start new game
@@ -300,15 +335,15 @@ new Vue({
 		        Vue.set(this.cards, randomIndex, temp);
 			}
 			// A random king card is displayed
-			let randomIndex = Math.floor(Math.random() * this.cards.length);
-			this.kingCard = this.kingDeck.find(card => card.id === randomIndex);
+			this.randomIndex = Math.floor(Math.random() * this.kingDeck.length);
+			this.kingCard = this.kingDeck[this.randomIndex];
 
 			// reset players stats
 			this.player1 = player1;
 			this.player2 = player2;
 
 			// rest king deck
-			this.kingDeck = cards;
+			this.kingDeck = kingDeck;
 
 			// prompt player to choose a card
 			this.message = "Pick a card.";
@@ -323,47 +358,48 @@ new Vue({
 
 		// card back is revealed
 	      card.flipped = !card.flipped;
-		  this.message = "You found: " + card.name + "."
+		  self.message = "You found: " + card.name + "."
 
 		  // if card is a match, let player know
-		  if (this.kingCard.name == card.name) {
-			  this.message2 = "You win the King Card!"
+		  if (self.kingCard.name == card.name) {
+			  self.message2 = "You win the King Card!"
 
 			  // card is added to user hand & removed from cards array
 			  // player score goes up by one
-			  // var removedCard = this.kingDeck.splice((this.kingCard.id), 1)
-			  if (this.playerTurn === player1.name){
-				  this.player1.hand.push(this.kingCard)
-				  this.player1.score++
+			  self.kingDeck.splice((self.randomIndex), 1)
+			  if (self.playerTurn === player1.name){
+				  self.player1.hand.push(self.kingCard)
+				  self.player1.score++
 			  } else {
-				  this.player2.hand.push(this.kingCard)
-				  this.player2.score++
+				  self.player2.hand.push(self.kingCard)
+				  self.player2.score++
+
 			  }
 
 			  // check if player is the leader
 			  // update leader status
-			  if (this.player1.score > this.player2.score) {
-				  this.player1.leader = true;
-				  this.player2.leader = false;
-			  } else if (this.player2.score > this.player1.score) {
-				  this.player1.leader = false;
-				  this.player2.leader = true;
+			  if (self.player1.score > self.player2.score) {
+				  self.player1.leader = true;
+				  self.player2.leader = false;
+			  } else if (self.player2.score > self.player1.score) {
+				  self.player1.leader = false;
+				  self.player2.leader = true;
 			  } else {
-				  this.player1.leader = false;
-				  this.player2.leader = false;
+				  self.player1.leader = false;
+				  self.player2.leader = false;
 			  }
 
 			  // check if score is 8
 			  // if score is 8, player wins!
-			  if (this.player1.score >= 8 || this.player2.score >= 8) {
-				  this.message = "You Win!";
-				  this.message2 = "Choose 'Start New Game' to play again.";
+			  if (self.player1.score === 8 || self.player2.score === 8) {
+				  self.message = "You Win!";
+				  self.message2 = "Choose 'Start New Game' to play again.";
 			  } else {
-			  // if not, prompt player to choose again
-				// wait 2 seconds before changing king card
+			  // if not, change the king card
+				  self.randomIndex = Math.floor(Math.random() * self.kingDeck.length)
+				  self.kingCard = self.kingDeck[self.randomIndex]
+				// wait 2 seconds before prompting player to choose again
 			    setTimeout(function(){
-					let randomIndex = Math.floor(Math.random() * self.cards.length)
-					self.kingCard = self.kingDeck.find(newCard => newCard.id === randomIndex)
 					self.message = "The new king card is " + self.kingCard.name;
 					card.flipped = !card.flipped
 					self.message2 = "Pick a card."
@@ -372,7 +408,7 @@ new Vue({
 
 		  // if card is not a match, let player know
 		  } else {
-			this.message2 = "Sorry, it's not a match."
+			self.message2 = "Sorry, it's not a match."
 			// wait 2 seconds, then alternate player's turn
 			setTimeout(function(){
 				if (self.playerTurn === player1.name){

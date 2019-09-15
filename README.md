@@ -62,10 +62,11 @@ You can see more of her artwork online at the following links:
 
 ## Stretch Goals
 
-1. A player can choose to play 1 player or 2 player mode.
-2. A player can choose to play against a computer on beginner, intermediate, or expert mode:
+1. A player can set the number of cards they want to play to.
+2. A player can choose to play 1 player or 2 player mode.
+3. A player can choose to play against a computer on beginner, intermediate, or expert mode:
 	* Beginner mode would mean the computer picks cards at random.
 	* Intermediate mode would mean the computer remembers if it has seen a card before and will pick the correct card 50% of the time.
 	* Expert mode would mean that if the computer has seen the card before, it will choose the correct card 100% of the time.
-3. A player can play against a friend who is also registered on the site. The player 2 will become the friend's name and their score will also be recorded.
-4. An admin sign in will allow me to delete, update and add cards from the front end. 	
+4. A player can play against a friend who is also registered on the site. The player 2 will become the friend's name and their score will also be recorded.
+5. An admin sign in will allow me to delete, update and add cards from the front end. 	

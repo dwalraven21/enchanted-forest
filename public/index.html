@@ -128,10 +128,10 @@
 					</div>
 					<!-- CARDS -->
 					<div v-if='player1.hand.length > 0'>
-						<div class='collected-cards' v-for="card in player1.hand" :key="card.id">
+						<div class='collected-cards' v-for="card in player1.hand" :key="card.key">
 							<img class="king-card" :src="card.front">
 						</div>
-					</div>	
+					</div>
 					<!-- SCORE -->
 					<div class='current-score'>
 						<h4> {{player1.score}} / 8 Cards</h4>
@@ -142,7 +142,7 @@
 					<!-- KING CARD  -->
 					<h2>King Card</h2>
 					<div>
-						<img class="king-card" :src="kingCard.front">
+						<img class="king-card" :src="kingCard.front" :key="kingCard.key">
 					</div>
 					<!-- PLAYER PROMPT  -->
 					<div id="player-prompt">
@@ -152,7 +152,7 @@
 					<!-- ALL CARDS  -->
 					<div id="all-cards">
 					<transition-group name="shuffle" tag="div" class="row">
-						<div v-on:click="flipCard(card)" v-for="card in cards" :key="card.id">
+						<div v-on:click="flipCard(card)" v-for="card in cards" :key="card.key">
 						<transition name="flip" tag="div">
 					          <img v-if="!card.flipped" class="card" key="back" :src="card.back">
 					          <img v-else class="card" key="front" :src="card.front">
@@ -171,7 +171,7 @@
 					</div>
 					<!-- CARDS -->
 					<div v-if='player2.hand.length > 0'>
-						<div class='collected-cards' v-for="card in player2.hand" :key="card.id">
+						<div class='collected-cards' v-for="card in player2.hand" :key="card.key">
 							<img class="king-card" :src="card.front">
 						</div>
 					</div>
