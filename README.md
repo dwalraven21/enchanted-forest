@@ -4,7 +4,7 @@ A card game that requires players to remember the locations of fairytale treasur
 
 ## Technology Used
 
-* Front-End: HTML, CSS, SCSS, JavaScript, Vue.js
+* Front-End: HTML, CSS, JavaScript, Vue.js
 * Database: MongoDB / mongoose
 * Back-End: Node.js / Express.js
 
