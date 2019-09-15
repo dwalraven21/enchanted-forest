@@ -123,56 +123,29 @@ const cards = [
 // create starting stats for players.
 // default names are Player 1 and Player 2
 // empty hand arrays, score of zero and there is no leader.
-const players = [
-	{
+const player1 = {
+		id: 1,
 		name: 'Player 1',
 		hand: [],
 		score: 0,
 		leader: false
-	},
-	{
+	};
+
+const player2 =	{
+		id: 2,
 		name: 'Player 2',
 		hand: [],
 		score: 0,
 		leader: false
-	}
-]
+	};
 
 //default kingCard
-const kingCard = {
-    	name: "The Frog Prince",
-    	front: "images/frog-prince.jpg",
-    }
+const kingCard = {};
 
 // register modal component
 Vue.component('modal', {
 	template: '#modal-template'
 })
-
-// When player clicks start new game
-	// game cards are shuffled and backs are displayed
-	// A random king card is displayed
-	// player hands are reset
-	// prompt player to choose a card
-
-// when player clicks a card
-		// card is flipped
-		// check if it is the same as king card
-			// if it matches
-				// card is added to user hand
-				// a new king card is taken from the deck
-				// * must actually REMOVE it from the deck
-				// player score goes up by one
-				// check if player is the leader
-					// if so display crown
-					// if not, don't display crown
-				// check if score is 8
-					// if score is 8, player wins!
-					// if not, prompt player to choose again
-					// repeat
-			// if it doesnt match
-				// alternate player's turn
-				// propmpt player to choose a card
 
 // start app
 new Vue({
@@ -184,26 +157,34 @@ new Vue({
 		showSignup: false,
 		showStats: false,
 		cards: cards,
-		players: players,
+		player1: player1,
+		player2: player2,
 		kingCard: kingCard,
+		playerTurn: player1.name,
 		message: "Pick a card.",
 		message2: ""
 	},
 	methods: {
+		// When player clicks start new game
+		// player hands are reset
 		shuffleDeck: function() {
+			// game cards are shuffled and backs are displayed
 	        for(let i = this.cards.length - 1; i > 0; i--) {
 		        let randomIndex = Math.floor(Math.random() * i);
-
 		        let temp = this.cards[i];
 		        Vue.set(this.cards, i, this.cards[randomIndex]);
 		        Vue.set(this.cards, randomIndex, temp);
 			}
+			// A random king card is displayed
 			let randomIndex = Math.floor(Math.random() * this.cards.length);
 			this.kingCard = cards.find(card => card.id === randomIndex);
+
+			// prompt player to choose a card
 			this.message = "Pick a card.";
 			this.message2 = "";
 		},
 
+		// when player clicks a card
 	    flipCard: function(card){
 		// card back is revealed
 	      card.flipped = !card.flipped;
@@ -214,8 +195,18 @@ new Vue({
 			  this.message2 = "You win the King Card!"
 
 			  // change the king card
+			  // * REMOVE old kingCard from the deck
 			  let randomIndex = Math.floor(Math.random() * this.cards.length)
 			  this.kingCard = cards.find(newCard => newCard.id === randomIndex)
+
+			  // card is added to user hand
+			  // player score goes up by one
+			  // check if player is the leader
+				  // if so display crown
+				  // if not, don't display crown
+			  // check if score is 8
+				  // if score is 8, player wins!
+			// if not, prompt player to choose again
 
 			  // wait 2 seconds before announcing new card
 			  setTimeout(() =>
@@ -223,13 +214,17 @@ new Vue({
 			  2000)
 			  setTimeout(() => this.message2 = "", 2000)
 
+		  // if card is not a match, let player know
 		  } else {
 			this.message2 = "Sorry, it's not a match."
+			// alternate player's turn
 		  }
+		  // wait 2.5 seconds before flipping card back over
 		  setTimeout(() => card.flipped = !card.flipped, 2500);
 		}
 
 	},
+	// on page load start a new game
 	beforeMount(){
 		this.shuffleDeck()
 	 },
