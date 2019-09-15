@@ -186,6 +186,10 @@ new Vue({
 
 		// when player clicks a card
 	    flipCard: function(card){
+
+		// self becomes this in scope
+		var self = this;
+
 		// card back is revealed
 	      card.flipped = !card.flipped;
 		  this.message = "You found: " + card.name + "."
@@ -207,8 +211,8 @@ new Vue({
 
 			  // wait 2 seconds before announcing new card
 			    setTimeout(function(){
-				this.message = "The new king card is " + this.kingCard.name;
-				this.message2 = "Pick a card."
+				self.message = "The new king card is " + self.kingCard.name;
+				self.message2 = "Pick a card."
 				}, 2000)
 
 		  // if card is not a match, let player know
@@ -216,14 +220,15 @@ new Vue({
 			this.message2 = "Sorry, it's not a match."
 			// wait 2 seconds, then alternate player's turn
 			setTimeout(function(){
-				// if (this.playerTurn === player1.name){
-				// 	this.playerTurn = player2.name
-				// } else {
-				// 	this.playerTurn = player1.name
-				// }
+				if (self.playerTurn === player1.name){
+					self.playerTurn = player2.name
+				} else {
+					self.playerTurn = player1.name
+				}
 				//flip card and prompt player to pick a card
 				card.flipped = !card.flipped
-				this.message = "Pick a card."
+				self.message = "Pick a card."
+				self.message2 = '';
 
 			}, 2000);
 		  }
