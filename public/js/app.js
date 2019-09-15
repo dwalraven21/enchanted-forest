@@ -198,10 +198,6 @@ new Vue({
 		  if (this.kingCard.name == card.name) {
 			  this.message2 = "You win the King Card!"
 
-			  // change the king card
-			  let randomIndex = Math.floor(Math.random() * this.cards.length)
-			  this.kingCard = cards.find(newCard => newCard.id === randomIndex)
-
 			  // card is added to user hand & removed from cards array
 			  // player score goes up by one
 			  // check if player is the leader
@@ -209,10 +205,12 @@ new Vue({
 				  // if score is 8, player wins!
 			  // if not, prompt player to choose again
 
-			  // wait 2 seconds before announcing new card
+			  // wait 2 seconds before changing king card
 			    setTimeout(function(){
-				self.message = "The new king card is " + self.kingCard.name;
-				self.message2 = "Pick a card."
+					let randomIndex = Math.floor(Math.random() * self.cards.length)
+					self.kingCard = cards.find(newCard => newCard.id === randomIndex)
+					self.message = "The new king card is " + self.kingCard.name;
+					self.message2 = "Pick a card."
 				}, 2000)
 
 		  // if card is not a match, let player know
