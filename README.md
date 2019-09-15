@@ -26,7 +26,7 @@ While I love design, I'm not an artist myself, but I was fortunate enough to fin
 
 ## Acknowledgments
 
-I would like to give a special thank you to artist, Liiga Klavina, for giving me permission to use her artwork on the game cards. Her artwork really gave my project something special and I can't thank her enough for her lovely work.
+I would like to give a special thank you to artist, Liiga Klavina, for giving me permission to use her artwork on the game cards. I feel her artwork is really what makes my game special and I can't thank her enough for her lovely work.
 
 You can see more of her artwork online at the following links:
 
