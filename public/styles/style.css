@@ -199,9 +199,10 @@ footer a {
 
 .player-cards {
 	background: var(--foggy);
-	padding: 0px 15px;
+	padding: 0px auto;
 	z-index: -5;
 	border: 1px solid var(--hunter);
+	min-width: 200px;
 }
 
 .player-cards h3 {
@@ -231,7 +232,7 @@ footer a {
 	font-size: 30px;
 }
 
-.king-card img {
+.king-card {
 	border-radius: 7px;
 	background: var(--butter);
 	border: 2px solid var(--darker-gold);

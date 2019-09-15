@@ -1,119 +1,242 @@
 //temporarily adding cards data here
 const cards = [
 {
-	id: 1,
+	id: 0,
 	name: "The Beast",
 	front: "images/beast.jpg",
 	back: "images/back-of-card.png",
 	flipped: false
 },
 {
-	id: 2,
+	id: 1,
 	name: "The Mermaid",
 	front: "images/bride-of-the-sea.jpg",
 	back: "images/back-of-card.png",
 	flipped: false
 },
 {
-	id: 3,
+	id: 2,
 	name: "The Flower Queen",
 	front: "images/flower-queen.jpg",
 	back: "images/back-of-card.png",
 	flipped: false
 },
 {
-	id: 4,
+	id: 3,
 	name: "The Frog Prince",
 	front: "images/frog-prince.jpg",
 	back: "images/back-of-card.png",
 	flipped: false
 },
 {
-	id: 5,
+	id: 4,
 	name: "The Glass Slipper",
 	front: "images/glass-slipper.jpg",
 	back: "images/back-of-card.png",
 	flipped: false
 },
 {
-	id: 6,
+	id: 5,
 	name: "The Lady In White",
 	front: "images/lady-in-white.jpg",
 	back: "images/back-of-card.png",
 	flipped: false
 },
 {
-	id: 7,
+	id: 6,
 	name: "The Night Owl",
 	front: "images/night-owl.jpg",
 	back: "images/back-of-card.png",
 	flipped: false
 },
 {
-	id: 8,
+	id: 7,
 	name: "Persephone",
 	front: "images/persephone.jpg",
 	back: "images/back-of-card.png",
 	flipped: false
 },
 {
-	id: 9,
+	id: 8,
 	name: "The Walraven",
 	front: "images/raven-flight.jpg",
 	back: "images/back-of-card.png",
 	flipped: false
 },
 {
-	id: 10,
+	id: 9,
 	name: "The Seelie Queen",
 	front: "images/seelie-queen.jpg",
 	back: "images/back-of-card.png",
 	flipped: false
 },
 {
-	id: 11,
+	id: 10,
 	name: "The Shield Maiden",
 	front: "images/shield-maiden.jpg",
 	back: "images/back-of-card.png",
 	flipped: false
 },
 {
-	id: 12,
+	id: 11,
 	name: "The Swan Princess",
 	front: "images/swan-princess.jpg",
 	back: "images/back-of-card.png",
 	flipped: false
 },
 {
-	id: 13,
+	id: 12,
 	name: "The Golden Ball",
 	front: "images/the-golden-ball.jpg",
 	back: "images/back-of-card.png",
 	flipped: false
 },
 {
-	id: 14,
+	id: 13,
 	name: "The White Dove",
 	front: "images/white-dove.jpg",
 	back: "images/back-of-card.png",
 	flipped: false
 },
 {
-	id: 15,
+	id: 14,
 	name: "The White Stag",
 	front: "images/white-stag.jpg",
 	back: "images/back-of-card.png",
 	flipped: false
 },
 {
-	id: 16,
+	id: 15,
 	name: "Mother Willow",
 	front: "images/willow.jpg",
 	back: "images/back-of-card.png",
 	flipped: false
 },
 {
-	id: 17,
+	id: 16,
+	name: "The Wolf",
+	front: "images/wolf.jpg",
+	back: "images/back-of-card.png",
+	flipped: false
+}
+];
+
+// added king deck to try to fix issue where cards are being removed from game board
+const kingDeck = [
+{
+	id: 0,
+	name: "The Beast",
+	front: "images/beast.jpg",
+	back: "images/back-of-card.png",
+	flipped: false
+},
+{
+	id: 1,
+	name: "The Mermaid",
+	front: "images/bride-of-the-sea.jpg",
+	back: "images/back-of-card.png",
+	flipped: false
+},
+{
+	id: 2,
+	name: "The Flower Queen",
+	front: "images/flower-queen.jpg",
+	back: "images/back-of-card.png",
+	flipped: false
+},
+{
+	id: 3,
+	name: "The Frog Prince",
+	front: "images/frog-prince.jpg",
+	back: "images/back-of-card.png",
+	flipped: false
+},
+{
+	id: 4,
+	name: "The Glass Slipper",
+	front: "images/glass-slipper.jpg",
+	back: "images/back-of-card.png",
+	flipped: false
+},
+{
+	id: 5,
+	name: "The Lady In White",
+	front: "images/lady-in-white.jpg",
+	back: "images/back-of-card.png",
+	flipped: false
+},
+{
+	id: 6,
+	name: "The Night Owl",
+	front: "images/night-owl.jpg",
+	back: "images/back-of-card.png",
+	flipped: false
+},
+{
+	id: 7,
+	name: "Persephone",
+	front: "images/persephone.jpg",
+	back: "images/back-of-card.png",
+	flipped: false
+},
+{
+	id: 8,
+	name: "The Walraven",
+	front: "images/raven-flight.jpg",
+	back: "images/back-of-card.png",
+	flipped: false
+},
+{
+	id: 9,
+	name: "The Seelie Queen",
+	front: "images/seelie-queen.jpg",
+	back: "images/back-of-card.png",
+	flipped: false
+},
+{
+	id: 10,
+	name: "The Shield Maiden",
+	front: "images/shield-maiden.jpg",
+	back: "images/back-of-card.png",
+	flipped: false
+},
+{
+	id: 11,
+	name: "The Swan Princess",
+	front: "images/swan-princess.jpg",
+	back: "images/back-of-card.png",
+	flipped: false
+},
+{
+	id: 12,
+	name: "The Golden Ball",
+	front: "images/the-golden-ball.jpg",
+	back: "images/back-of-card.png",
+	flipped: false
+},
+{
+	id: 13,
+	name: "The White Dove",
+	front: "images/white-dove.jpg",
+	back: "images/back-of-card.png",
+	flipped: false
+},
+{
+	id: 14,
+	name: "The White Stag",
+	front: "images/white-stag.jpg",
+	back: "images/back-of-card.png",
+	flipped: false
+},
+{
+	id: 15,
+	name: "Mother Willow",
+	front: "images/willow.jpg",
+	back: "images/back-of-card.png",
+	flipped: false
+},
+{
+	id: 16,
 	name: "The Wolf",
 	front: "images/wolf.jpg",
 	back: "images/back-of-card.png",
@@ -124,7 +247,7 @@ const cards = [
 // default names are Player 1 and Player 2
 // empty hand arrays, score of zero and there is no leader.
 const player1 = {
-		id: 1,
+		id: 0,
 		name: 'Player 1',
 		hand: [],
 		score: 0,
@@ -132,7 +255,7 @@ const player1 = {
 	};
 
 const player2 =	{
-		id: 2,
+		id: 1,
 		name: 'Player 2',
 		hand: [],
 		score: 0,
@@ -157,9 +280,10 @@ new Vue({
 		showSignup: false,
 		showStats: false,
 		cards: cards,
+		kingDeck: kingDeck,
+		kingCard: kingCard,
 		player1: player1,
 		player2: player2,
-		kingCard: kingCard,
 		playerTurn: player1.name,
 		message: "Pick a card.",
 		message2: ""
@@ -177,7 +301,14 @@ new Vue({
 			}
 			// A random king card is displayed
 			let randomIndex = Math.floor(Math.random() * this.cards.length);
-			this.kingCard = cards.find(card => card.id === randomIndex);
+			this.kingCard = this.kingDeck.find(card => card.id === randomIndex);
+
+			// reset players stats
+			this.player1 = player1;
+			this.player2 = player2;
+
+			// rest king deck
+			this.kingDeck = cards;
 
 			// prompt player to choose a card
 			this.message = "Pick a card.";
@@ -200,18 +331,44 @@ new Vue({
 
 			  // card is added to user hand & removed from cards array
 			  // player score goes up by one
-			  // check if player is the leader
-			  // check if score is 8
-				  // if score is 8, player wins!
-			  // if not, prompt player to choose again
+			  // var removedCard = this.kingDeck.splice((this.kingCard.id), 1)
+			  if (this.playerTurn === player1.name){
+				  this.player1.hand.push(this.kingCard)
+				  this.player1.score++
+			  } else {
+				  this.player2.hand.push(this.kingCard)
+				  this.player2.score++
+			  }
 
-			  // wait 2 seconds before changing king card
+			  // check if player is the leader
+			  // update leader status
+			  if (this.player1.score > this.player2.score) {
+				  this.player1.leader = true;
+				  this.player2.leader = false;
+			  } else if (this.player2.score > this.player1.score) {
+				  this.player1.leader = false;
+				  this.player2.leader = true;
+			  } else {
+				  this.player1.leader = false;
+				  this.player2.leader = false;
+			  }
+
+			  // check if score is 8
+			  // if score is 8, player wins!
+			  if (this.player1.score >= 8 || this.player2.score >= 8) {
+				  this.message = "You Win!";
+				  this.message2 = "Choose 'Start New Game' to play again.";
+			  } else {
+			  // if not, prompt player to choose again
+				// wait 2 seconds before changing king card
 			    setTimeout(function(){
 					let randomIndex = Math.floor(Math.random() * self.cards.length)
-					self.kingCard = cards.find(newCard => newCard.id === randomIndex)
+					self.kingCard = self.kingDeck.find(newCard => newCard.id === randomIndex)
 					self.message = "The new king card is " + self.kingCard.name;
+					card.flipped = !card.flipped
 					self.message2 = "Pick a card."
 				}, 2000)
+			  }
 
 		  // if card is not a match, let player know
 		  } else {

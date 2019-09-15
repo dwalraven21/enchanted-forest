@@ -122,16 +122,16 @@
 				<div class="player-cards">
 					<!-- NAME -->
 					<h3>{{player1.name}}</h3>
-					<!-- CARDS -->
-					<div v-if='player1.hand.length > 0'>
-						<div class='collected-cards' v-for="card in player1.hand" :key="card.id">
-							<img class="card" :src="card.front">
-						</div>
-					</div>
 					<!-- LEADER STATUS -->
 					<div v-if='player1.leader' class='crown'>
 						<img src="images/crown.png" alt="leader status">
 					</div>
+					<!-- CARDS -->
+					<div v-if='player1.hand.length > 0'>
+						<div class='collected-cards' v-for="card in player1.hand" :key="card.id">
+							<img class="king-card" :src="card.front">
+						</div>
+					</div>	
 					<!-- SCORE -->
 					<div class='current-score'>
 						<h4> {{player1.score}} / 8 Cards</h4>
@@ -141,8 +141,8 @@
 				<div id="game-board">
 					<!-- KING CARD  -->
 					<h2>King Card</h2>
-					<div class="king-card">
-						<img :src="kingCard.front">
+					<div>
+						<img class="king-card" :src="kingCard.front">
 					</div>
 					<!-- PLAYER PROMPT  -->
 					<div id="player-prompt">
@@ -165,15 +165,15 @@
 				<div class="player-cards">
 					<!-- NAME -->
 					<h3>{{player2.name}}</h3>
-					<!-- CARDS -->
-					<div v-if='player2.hand.length > 0'>
-						<div class='collected-cards' v-for="card in player2.hand" :key="card.id">
-							<img class="card" :src="card.front">
-						</div>
-					</div>
 					<!-- LEADER STATUS -->
 					<div v-if='player2.leader' class='crown'>
 						<img src="images/crown.png" alt="leader status">
+					</div>
+					<!-- CARDS -->
+					<div v-if='player2.hand.length > 0'>
+						<div class='collected-cards' v-for="card in player2.hand" :key="card.id">
+							<img class="king-card" :src="card.front">
+						</div>
 					</div>
 					<!-- SCORE -->
 					<div class='current-score'>
