@@ -229,5 +229,8 @@ new Vue({
 		  setTimeout(() => card.flipped = !card.flipped, 2500);
 		}
 
-	}
+	},
+	beforeMount(){
+		this.shuffleDeck()
+	 },
 })
