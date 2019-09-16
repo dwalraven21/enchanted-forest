@@ -205,10 +205,25 @@ footer a {
 	min-width: 200px;
 }
 
+.player-turn {
+	background: var(--butter);
+	padding: 0px auto;
+	z-index: -5;
+	border: 1px solid var(--golden);
+	min-width: 200px;
+}
+
+
 .player-cards h3 {
 	font-family: var(--accent-font);
 	font-size: 30px;
 }
+
+.player-turn h3 {
+	font-family: var(--accent-font);
+	font-size: 32px;
+}
+
 
 .current-score h4 {
 	font-family: var(--main-font);
