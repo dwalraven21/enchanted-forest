@@ -236,6 +236,17 @@ footer a {
 	border-radius: 7px;
 	background: var(--butter);
 	border: 2px solid var(--darker-gold);
+	width: 180px;
+	padding: 15px;
+	margin: 5px;
+	border: 2px solid var(--golden);
+	box-shadow: 5px 5px 5px var(--dark-gray);
+}
+
+.hand-card {
+	border-radius: 7px;
+	background: var(--butter);
+	border: 2px solid var(--darker-gold);
 	width: 120px;
 	padding: 15px;
 	margin: 5px;
@@ -272,8 +283,8 @@ footer a {
 	border-radius: 7px;
 	background: white;
 	border: 2px solid var(--darker-gold);
-	width: 120px;
-	height: 180px;
+	width: 150px;
+	height: 220px;
 	padding: 15px;
 	margin: 10px;
 	border: 2px solid var(--golden);

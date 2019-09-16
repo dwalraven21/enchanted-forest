@@ -1,124 +1,117 @@
 //temporarily adding cards data here
 const cards = [
-{
-	id: 0,
-	name: "The Beast",
-	front: "images/beast.jpg",
-	back: "images/back-of-card.png",
-	flipped: false
-},
-{
-	id: 1,
-	name: "The Mermaid",
-	front: "images/bride-of-the-sea.jpg",
-	back: "images/back-of-card.png",
-	flipped: false
-},
-{
-	id: 2,
-	name: "The Flower Queen",
-	front: "images/flower-queen.jpg",
-	back: "images/back-of-card.png",
-	flipped: false
-},
-{
-	id: 3,
-	name: "The Frog Prince",
-	front: "images/frog-prince.jpg",
-	back: "images/back-of-card.png",
-	flipped: false
-},
-{
-	id: 4,
-	name: "The Glass Slipper",
-	front: "images/glass-slipper.jpg",
-	back: "images/back-of-card.png",
-	flipped: false
-},
-{
-	id: 5,
-	name: "The Lady In White",
-	front: "images/lady-in-white.jpg",
-	back: "images/back-of-card.png",
-	flipped: false
-},
-{
-	id: 6,
-	name: "The Night Owl",
-	front: "images/night-owl.jpg",
-	back: "images/back-of-card.png",
-	flipped: false
-},
-{
-	id: 7,
-	name: "Persephone",
-	front: "images/persephone.jpg",
-	back: "images/back-of-card.png",
-	flipped: false
-},
-{
-	id: 8,
-	name: "The Walraven",
-	front: "images/raven-flight.jpg",
-	back: "images/back-of-card.png",
-	flipped: false
-},
-{
-	id: 9,
-	name: "The Seelie Queen",
-	front: "images/seelie-queen.jpg",
-	back: "images/back-of-card.png",
-	flipped: false
-},
-{
-	id: 10,
-	name: "The Shield Maiden",
-	front: "images/shield-maiden.jpg",
-	back: "images/back-of-card.png",
-	flipped: false
-},
-{
-	id: 11,
-	name: "The Swan Princess",
-	front: "images/swan-princess.jpg",
-	back: "images/back-of-card.png",
-	flipped: false
-},
-{
-	id: 12,
-	name: "The Golden Ball",
-	front: "images/the-golden-ball.jpg",
-	back: "images/back-of-card.png",
-	flipped: false
-},
-{
-	id: 13,
-	name: "The White Dove",
-	front: "images/white-dove.jpg",
-	back: "images/back-of-card.png",
-	flipped: false
-},
-{
-	id: 14,
-	name: "The White Stag",
-	front: "images/white-stag.jpg",
-	back: "images/back-of-card.png",
-	flipped: false
-},
-{
-	id: 15,
-	name: "Mother Willow",
-	front: "images/willow.jpg",
-	back: "images/back-of-card.png",
-	flipped: false
-},
-{
-	id: 16,
-	name: "The Wolf",
-	front: "images/wolf.jpg",
-	back: "images/back-of-card.png",
-	flipped: false
-}
+	{
+		id: 0,
+		name: "The Beast",
+		front: "images/beast.jpg",
+		back: "images/back-of-card.png",
+		flipped: false
+	},
+	{
+		id: 1,
+		name: "The Mermaid",
+		front: "images/bride-of-the-sea.jpg",
+		back: "images/back-of-card.png",
+		flipped: false
+	},
+	{
+		id: 2,
+		name: "The Flower Queen",
+		front: "images/flower-queen.jpg",
+		back: "images/back-of-card.png",
+		flipped: false
+	},
+	{
+		id: 3,
+		name: "The Frog Prince",
+		front: "images/frog-prince.jpg",
+		back: "images/back-of-card.png",
+		flipped: false
+	},
+	{
+		id: 4,
+		name: "The Glass Slipper",
+		front: "images/glass-slipper.jpg",
+		back: "images/back-of-card.png",
+		flipped: false
+	},
+	{
+		id: 5,
+		name: "The Lady In White",
+		front: "images/lady-in-white.jpg",
+		back: "images/back-of-card.png",
+		flipped: false
+	},
+	{
+		id: 6,
+		name: "The Night Owl",
+		front: "images/night-owl.jpg",
+		back: "images/back-of-card.png",
+		flipped: false
+	},
+	{
+		id: 7,
+		name: "Persephone",
+		front: "images/persephone.jpg",
+		back: "images/back-of-card.png",
+		flipped: false
+	},
+	{
+		id: 8,
+		name: "The Walraven",
+		front: "images/raven-flight.jpg",
+		back: "images/back-of-card.png",
+		flipped: false
+	},
+	{
+		id: 9,
+		name: "The Seelie Queen",
+		front: "images/seelie-queen.jpg",
+		back: "images/back-of-card.png",
+		flipped: false
+	},
+	{
+		id: 10,
+		name: "The Shield Maiden",
+		front: "images/shield-maiden.jpg",
+		back: "images/back-of-card.png",
+		flipped: false
+	},
+	{
+		id: 11,
+		name: "The Swan Princess",
+		front: "images/swan-princess.jpg",
+		back: "images/back-of-card.png",
+		flipped: false
+	},
+	{
+		id: 12,
+		name: "The Golden Ball",
+		front: "images/the-golden-ball.jpg",
+		back: "images/back-of-card.png",
+		flipped: false
+	},
+	{
+		id: 13,
+		name: "The White Stag",
+		front: "images/white-stag.jpg",
+		back: "images/back-of-card.png",
+		flipped: false
+	},
+	{
+		id: 14,
+		name: "Mother Willow",
+		front: "images/willow.jpg",
+		back: "images/back-of-card.png",
+		flipped: false
+	},
+	{
+		id: 15,
+		name: "The Wolf",
+		front: "images/wolf.jpg",
+		back: "images/back-of-card.png",
+		flipped: false
+	}
 ];
 
 // added king deck to try to fix issue where cards are being removed from game board
@@ -216,27 +209,20 @@ const kingDeck = [
 	},
 	{
 		id: 13,
-		name: "The White Dove",
-		front: "images/white-dove.jpg",
-		back: "images/back-of-card.png",
-		flipped: false
-	},
-	{
-		id: 14,
 		name: "The White Stag",
 		front: "images/white-stag.jpg",
 		back: "images/back-of-card.png",
 		flipped: false
 	},
 	{
-		id: 15,
+		id: 14,
 		name: "Mother Willow",
 		front: "images/willow.jpg",
 		back: "images/back-of-card.png",
 		flipped: false
 	},
 	{
-		id: 16,
+		id: 15,
 		name: "The Wolf",
 		front: "images/wolf.jpg",
 		back: "images/back-of-card.png",
@@ -324,125 +310,118 @@ new Vue({
 			// rest king deck
 			this.kingDeck = [
 				{
-				id: 0,
-				name: "The Beast",
-				front: "images/beast.jpg",
-				back: "images/back-of-card.png",
-				flipped: false
-			},
-			{
-				id: 1,
-				name: "The Mermaid",
-				front: "images/bride-of-the-sea.jpg",
-				back: "images/back-of-card.png",
-				flipped: false
-			},
-			{
-				id: 2,
-				name: "The Flower Queen",
-				front: "images/flower-queen.jpg",
-				back: "images/back-of-card.png",
-				flipped: false
-			},
-			{
-				id: 3,
-				name: "The Frog Prince",
-				front: "images/frog-prince.jpg",
-				back: "images/back-of-card.png",
-				flipped: false
-			},
-			{
-				id: 4,
-				name: "The Glass Slipper",
-				front: "images/glass-slipper.jpg",
-				back: "images/back-of-card.png",
-				flipped: false
-			},
-			{
-				id: 5,
-				name: "The Lady In White",
-				front: "images/lady-in-white.jpg",
-				back: "images/back-of-card.png",
-				flipped: false
-			},
-			{
-				id: 6,
-				name: "The Night Owl",
-				front: "images/night-owl.jpg",
-				back: "images/back-of-card.png",
-				flipped: false
-			},
-			{
-				id: 7,
-				name: "Persephone",
-				front: "images/persephone.jpg",
-				back: "images/back-of-card.png",
-				flipped: false
-			},
-			{
-				id: 8,
-				name: "The Walraven",
-				front: "images/raven-flight.jpg",
-				back: "images/back-of-card.png",
-				flipped: false
-			},
-			{
-				id: 9,
-				name: "The Seelie Queen",
-				front: "images/seelie-queen.jpg",
-				back: "images/back-of-card.png",
-				flipped: false
-			},
-			{
-				id: 10,
-				name: "The Shield Maiden",
-				front: "images/shield-maiden.jpg",
-				back: "images/back-of-card.png",
-				flipped: false
-			},
-			{
-				id: 11,
-				name: "The Swan Princess",
-				front: "images/swan-princess.jpg",
-				back: "images/back-of-card.png",
-				flipped: false
-			},
-			{
-				id: 12,
-				name: "The Golden Ball",
-				front: "images/the-golden-ball.jpg",
-				back: "images/back-of-card.png",
-				flipped: false
-			},
-			{
-				id: 13,
-				name: "The White Dove",
-				front: "images/white-dove.jpg",
-				back: "images/back-of-card.png",
-				flipped: false
-			},
-			{
-				id: 14,
-				name: "The White Stag",
-				front: "images/white-stag.jpg",
-				back: "images/back-of-card.png",
-				flipped: false
-			},
-			{
-				id: 15,
-				name: "Mother Willow",
-				front: "images/willow.jpg",
-				back: "images/back-of-card.png",
-				flipped: false
-			},
-			{
-				id: 16,
-				name: "The Wolf",
-				front: "images/wolf.jpg",
-				back: "images/back-of-card.png",
-				flipped: false
-			}
-		];
+				   id: 0,
+				   name: "The Beast",
+				   front: "images/beast.jpg",
+				   back: "images/back-of-card.png",
+				   flipped: false
+			   },
+			   {
+				   id: 1,
+				   name: "The Mermaid",
+				   front: "images/bride-of-the-sea.jpg",
+				   back: "images/back-of-card.png",
+				   flipped: false
+			   },
+			   {
+				   id: 2,
+				   name: "The Flower Queen",
+				   front: "images/flower-queen.jpg",
+				   back: "images/back-of-card.png",
+				   flipped: false
+			   },
+			   {
+				   id: 3,
+				   name: "The Frog Prince",
+				   front: "images/frog-prince.jpg",
+				   back: "images/back-of-card.png",
+				   flipped: false
+			   },
+			   {
+				   id: 4,
+				   name: "The Glass Slipper",
+				   front: "images/glass-slipper.jpg",
+				   back: "images/back-of-card.png",
+				   flipped: false
+			   },
+			   {
+				   id: 5,
+				   name: "The Lady In White",
+				   front: "images/lady-in-white.jpg",
+				   back: "images/back-of-card.png",
+				   flipped: false
+			   },
+			   {
+				   id: 6,
+				   name: "The Night Owl",
+				   front: "images/night-owl.jpg",
+				   back: "images/back-of-card.png",
+				   flipped: false
+			   },
+			   {
+				   id: 7,
+				   name: "Persephone",
+				   front: "images/persephone.jpg",
+				   back: "images/back-of-card.png",
+				   flipped: false
+			   },
+			   {
+				   id: 8,
+				   name: "The Walraven",
+				   front: "images/raven-flight.jpg",
+				   back: "images/back-of-card.png",
+				   flipped: false
+			   },
+			   {
+				   id: 9,
+				   name: "The Seelie Queen",
+				   front: "images/seelie-queen.jpg",
+				   back: "images/back-of-card.png",
+				   flipped: false
+			   },
+			   {
+				   id: 10,
+				   name: "The Shield Maiden",
+				   front: "images/shield-maiden.jpg",
+				   back: "images/back-of-card.png",
+				   flipped: false
+			   },
+			   {
+				   id: 11,
+				   name: "The Swan Princess",
+				   front: "images/swan-princess.jpg",
+				   back: "images/back-of-card.png",
+				   flipped: false
+			   },
+			   {
+				   id: 12,
+				   name: "The Golden Ball",
+				   front: "images/the-golden-ball.jpg",
+				   back: "images/back-of-card.png",
+				   flipped: false
+			   },
+			   {
+				   id: 13,
+				   name: "The White Stag",
+				   front: "images/white-stag.jpg",
+				   back: "images/back-of-card.png",
+				   flipped: false
+			   },
+			   {
+				   id: 14,
+				   name: "Mother Willow",
+				   front: "images/willow.jpg",
+				   back: "images/back-of-card.png",
+				   flipped: false
+			   },
+			   {
+				   id: 15,
+				   name: "The Wolf",
+				   front: "images/wolf.jpg",
+				   back: "images/back-of-card.png",
+				   flipped: false
+			   }
+			];
 
 			// show CARDS
 			this.showCards = true;
@@ -508,7 +487,7 @@ new Vue({
 					self.message = "The new king card is " + self.kingCard.name;
 					card.flipped = !card.flipped
 					self.message2 = "Pick a card."
-				}, 1000)
+				}, 2000)
 			  }
 
 		  // if card is not a match, let player know
@@ -526,7 +505,7 @@ new Vue({
 				self.message = "Pick a card."
 				self.message2 = '';
 
-			}, 1000);
+			}, 2000);
 		  }
 		}
 

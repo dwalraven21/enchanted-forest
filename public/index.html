@@ -133,7 +133,7 @@
 					<!-- CARDS -->
 					<div v-if='player1.hand.length > 0'>
 						<div class='collected-cards' v-for="card in player1.hand" :key="card.id">
-							<img class="king-card" :src="card.front">
+							<img class="hand-card" :src="card.front">
 						</div>
 					</div>
 
@@ -177,7 +177,7 @@
 					<!-- CARDS -->
 					<div v-if='player2.hand.length > 0'>
 						<div class='collected-cards' v-for="card in player2.hand" :key="card.id">
-							<img class="king-card" :src="card.front">
+							<img class="hand-card" :src="card.front">
 						</div>
 					</div>
 
