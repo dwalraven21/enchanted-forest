@@ -3,7 +3,7 @@
 //==========================
 const express = require('express');
 const sessions = express.Router();
-const Player = require('../models/players.js');
+const User = require('../models/users.js');
 const bcrypt = require('bcrypt');
 
 //==========================
@@ -32,10 +32,10 @@ sessions.get('/', (req, resp)=>{
 // CREATE SESSION / LOG IN
 //==========================
 sessions.post('/', (req, res) => {
-  Player.findOne({username:req.body.username}, (error, foundPlayer) => {
-    if (foundPlayer) {
-		if(bcrypt.compareSync(req.body.password,foundPlayer.password)){
-	      req.session.currentUser = foundPlayer;
+  User.findOne({username:req.body.username}, (error, foundUser) => {
+    if (foundUser) {
+		if(bcrypt.compareSync(req.body.password, foundUser.password)){
+	      req.session.currentUser = foundUser;
 	      res.status(201).json({
 	        status:201,
 	        message:'session created'

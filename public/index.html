@@ -54,12 +54,12 @@
 			<header>
 				<h1>Enchanted Forest</h1>
 				<!-- Unauth View -->
-				<div id='unauth-buttons'>
+				<div v-if="!authView" id='unauth-buttons'>
 					<button id='login-button' @click="showLogin = true">Log In</button>
 					<button id='signup-button' @click="showSignup = true">Sign Up</button>
 				</div>
 				<!-- Auth View -->
-				<div id='auth-buttons'>
+				<div v-if="authView" id='auth-buttons'>
 					<button id='view-stats' @click="showStats = true">View My Stats</button>
 					<button id='logout'>Log Out</button>
 				</div>
@@ -98,26 +98,55 @@
 					</p>
 				</modal>
 				<modal v-if="showLogin" @close="showLogin = false">
-				  <h3 slot="header">Log In</h3>
-				  <p slot="body">
-				 	Placeholder Text
-				  </p>
+					<h3 slot="header">Log In</h3>
+					<div slot="body" class="form-container" id="login-form">
+						<form @submit.prevent="logIn">
+							<div>
+								<label>Username</label>
+								<input type="text" v-model="username">
+							</div>
+							<div>
+								<label>Password</label>
+								<input type="text" v-model="password">
+							</div><br/>
+							<div>
+								<button class="form-submit-button">Log In</button>
+							</div>
+						</form>
+					</div>
 				</modal>
 				<modal v-if="showSignup" @close="showSignup = false">
-				  <h3 slot="header">Sign Up</h3>
-				  <p slot="body">
-				 	Placeholder Text
-				  </p>
+					<h3 slot="header">Sign Up</h3>
+					<div slot="body" class="form-container" id="signup-form">
+						<form @submit="signUp">
+							<div>
+								<label>Name</label>
+								<input type="text" v-model="name">
+							</div>
+							<div>
+								<label>Username</label>
+								<input type="text" v-model="username">
+							</div>
+							<div>
+								<label>Password</label>
+								<input type="text" v-model="password">
+							</div><br/>
+							<div>
+								<button class="form-submit-button">Sign Up</button>
+							</div>
+						</form>
+					</div>
 				</modal>
-				<modal v-if="showStats" @close="showStats = false">
-				  <h3 slot="header">Player Stats</h3>
-				  <p slot="body">
-				 	Placeholder Text
-				  </p>
+				<modal v-if="showStats" @close="showStats = false" id="user-stats-page">
+					<h3 slot="header">Player Stats</h3>
+					<div slot="body">
+						<p><b>Total Wins:</b> 0</p>
+						<p><b>Total Wins:</b> 0</p>
+					</div>
 				</modal>
 			</div>
 			<main>
-			<!-- GAME PAGE -->
+			<!-- GAME -->
 				<!-- PLAYER CARDS -->
 				<div :class="{ 'player-turn': (playerTurn === player1.name), 'player-cards': (playerTurn !== player1.name) }">
 					<!-- NAME -->

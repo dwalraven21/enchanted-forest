@@ -258,13 +258,13 @@ const kingCard = {
 		flipped: false
 };
 
-// register modal component
+// Components
 Vue.component('modal', {
 	template: '#modal-template'
 })
 
 // start app
-new Vue({
+const app = new Vue({
 	el: '#app',
 	data: {
 		showRules: false,
@@ -273,6 +273,7 @@ new Vue({
 		showSignup: false,
 		showStats: false,
 		showCards: true,
+		authView: false,
 		cards: cards,
 		kingDeck: kingDeck,
 		kingCard: kingCard,
@@ -282,18 +283,24 @@ new Vue({
 		message: "Pick a card.",
 		message2: "",
 		randomIndex: 0,
+		currentUser: null,
+		name: null,
+		username: null,
+		password: null
+
 	},
 	methods: {
 		// When player clicks start new game
 		// player hands are reset
 		shuffleDeck: function() {
 			// game cards are shuffled and backs are displayed
-	        for(let i = this.cards.length - 1; i > 0; i--) {
-		        randomIndex = Math.floor(Math.random() * i);
-		        let temp = this.cards[i];
-		        Vue.set(this.cards, i, this.cards[this.randomIndex]);
-		        Vue.set(this.cards, this.randomIndex, temp);
+			for (let i = this.cards.length - 1; i >= 0; i--) {
+			        this.randomIndex = Math.floor(Math.random() * i);
+			        let temp = this.cards[i];
+			        Vue.set(this.cards, i, this.cards[this.randomIndex]);
+			        Vue.set(this.cards, this.randomIndex, temp);
 			}
+
 			// A random king card is displayed
 			this.randomIndex = Math.floor(Math.random() * this.kingDeck.length);
 			this.kingCard = this.kingDeck[this.randomIndex];
@@ -306,6 +313,9 @@ new Vue({
 			this.player2.hand = []
 			this.player2.score = 0
 			this.player2.leader = false
+
+			// reset to player1 turn
+			this.playerTurn = player1.name
 
 			// rest king deck
 			this.kingDeck = [
@@ -507,11 +517,79 @@ new Vue({
 
 			}, 2000);
 		  }
-		}
+	  },
+
+		signUp: function (e) {
+			e.preventDefault();
+
+			if (!this.name) {
+				alert('Name required.');
+			} else if (!this.username) {
+				alert('Username required.');
+			} else if (!this.password) {
+				alert('Password required.');
+			} else {
+				fetch('/users', {
+					method: 'POST',
+					body:JSON.stringify({
+						name: this.name,
+						username: this.username,
+						password: this.password
+					}),
+					headers: {
+				        'Accept': 'application/json, text/plain, */*',
+				        'Content-Type': 'application/json'
+				     }
+				}).then((res) => res.json())
+				.then((data) =>  {
+					console.log(data)
+					this.authView = true;
+					this.showLogin = false;
+				})
+				.catch((err) => console.error(err))
+			}
+		},
+
+		logIn: function (e) {
+			e.preventDefault();
+
+			if (!this.username) {
+				alert('Username required.');
+			} else if (!this.password) {
+				alert('Password required.');
+			} else {
+				fetch('/sessions', {
+					method: 'POST',
+					body:JSON.stringify({
+						username: this.username,
+						password: this.password
+					}),
+					headers: {
+				        'Accept': 'application/json, text/plain, */*',
+				        'Content-Type': 'application/json'
+				     }
+				}).then((res) => res.json())
+				.then((data) =>  {
+					console.log(data)
+					this.authView = true;
+					this.showLogin = false;
+				})
+				.catch((err) => console.error(err))
+			}
+		},
+
+		getUserStats: function() {
+			fetch('/users')
+			.then((res) => {
+				this.currentUser = res.data.currentUser
+			})
+			.catch((err) => console.error(err))
+		},
 
 	},
 	// on page load start a new game
 	beforeMount(){
 		this.shuffleDeck()
+
 	 },
 })

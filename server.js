@@ -47,8 +47,8 @@ app.use(morgan('tiny'));
 //==================
 // CONTROLLERS
 //==================
-const playersController = require('./controllers/players.js')
-app.use('/players', playersController)
+const usersController = require('./controllers/users.js')
+app.use('/users', usersController)
 
 const sessionsController = require('./controllers/sessions.js')
 app.use('/sessions', sessionsController)

@@ -47,6 +47,7 @@ h1 {
     color: var(--golden);
 	text-align: center;
 	font-size: 60px;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 /* h1:hover {
@@ -138,7 +139,7 @@ footer a {
 }
 
 #auth-buttons {
-	display: none;
+	/* display: none; */
 }
 
 #login-button {
@@ -194,6 +195,50 @@ footer a {
 }
 
 /* ================= */
+/*     FORMS         */
+/* ================= */
+
+form {
+  padding: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  text-align: right;
+}
+
+label {
+  margin-right: 50px;
+  text-transform: uppercase;
+  font-family: var(--main-font);
+  color: var(--darker-gold);
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 50%;
+  border: 1px solid var(--darker-gold);
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-right: 50px;
+  min-width: 150px;
+
+}
+
+input[type="submit"], .form-submit-button {
+	color: var(--darker-gold);
+    font-family: var(--main-font);
+    font-size: 20px;
+    border-radius: 4px;
+    border: 2px solid var(--darker-gold);
+    padding: 10px;
+}
+
+input[type="submit"]:hover, .form-submit-button:hover {
+	box-shadow: 2px 2px 2px var(--darker-gold);
+    cursor: pointer;
+}
+
+/* ================= */
 /*   PLAYER CARDS    */
 /* ================= */
 
@@ -221,7 +266,7 @@ footer a {
 
 .player-turn h3 {
 	font-family: var(--accent-font);
-	font-size: 32px;
+	font-size: 35px;
 }
 
 
