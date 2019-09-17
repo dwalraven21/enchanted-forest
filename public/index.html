@@ -61,7 +61,7 @@
 				<!-- Auth View -->
 				<div v-if="authView" id='auth-buttons'>
 					<button id='view-stats' @click="showStats = true">View My Stats</button>
-					<button id='logout'>Log Out</button>
+					<button id='logout' @click="logOut">Log Out</button>
 				</div>
 			</header>
 			<!-- ==================

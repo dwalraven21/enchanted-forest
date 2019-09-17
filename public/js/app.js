@@ -578,6 +578,17 @@ const app = new Vue({
 			}
 		},
 
+		logOut: function() {
+			fetch('/sessions', {
+			method: 'DELETE'
+			}).then((res) => res.json())
+			.then((data) =>  {
+				console.log(data)
+				this.authView = false;
+			})
+			.catch((err) => console.error(err))
+		},
+
 		getUserStats: function() {
 			fetch('/users')
 			.then((res) => {
