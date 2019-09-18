@@ -14,13 +14,13 @@ A card game that requires players to remember the locations of fairytale treasur
 
 ## Inspiration
 
-I was inspired to build this project for a number of reasons. Almost all of them are selfish.
+I was inspired to build this project for a number of reasons.
 
 First, my favorite thing to develop is game logic. I love the challenge and the puzzle-solving aspect of it. To me, building a game is more fun than playing it.
 
 My second favorite part of development is front-end design and animation. What better way to flex my designer and animator muscles than by building a card game with a fairytale theme? The design and animation potential is endless! My favorite effect is the shuffle animation when the player clicks "Start New Game".
 
-Finally, there is a bit of a nostalgia factor. Enchanted Forest was my favorite board game as a kid. It is fairly easy to learn and while it requires a bit of mental concentration (and the board game requires a small amount of math), it is accessible to any age group. I always loved the beautiful illustrations on the board and cards and wanted to bring that artistic element to my game as well.
+Finally, there is a bit of a nostalgia factor. Enchanted Forest was my favorite board game as a kid. It is fairly easy to learn and while it requires a bit of mental concentration, it is accessible to any age group. I always loved the beautiful illustrations on the board and cards and wanted to bring that artistic element to my game as well.
 
 While I love design, I'm not an artist myself, but I was fortunate enough to find an artist who's work was a perfect fit for the ascetic I wanted the game to have.
 
@@ -45,7 +45,7 @@ You can see more of her artwork online at the following links:
 
 ![](public/mockups/rules.jpg)
 
-## User Stories
+## User Stories - This is my MVP
 
 1. When a user lands on the homepage a new game board should be set up (with a randomly generated king card and game cards displayed face down in a random order).
 2. A user should be able click a button to see game rules.
@@ -60,7 +60,7 @@ You can see more of her artwork online at the following links:
 10. If authenticated, player 1 will be the user's name and a record of wins and loses will be maintained.
 11. If authenticated, a player can click a button to see all their stats.
 
-## Stretch Goals
+## Stretch Goals - These are updates I plan to make in the future
 
 1. A player can set the number of cards they want to play to.
 2. A player can choose to play 1 player or 2 player mode.
