@@ -497,10 +497,10 @@ const app = new Vue({
 
 					//if player is logged in, save update their wins or losses
 					if (this.currentUser && self.player1.score === 8) {
-						fetch('/user' + this.currentUser._id, {
+						fetch('/users/' + this.currentUser._id, {
 							method: 'PUT',
 							body:JSON.stringify({
-								wins: this.currentUser.wins++
+								wins: Number(this.currentUser.wins) + 1
 							}),
 							headers: {
 								'Accept': 'application/json, text/plain, */*',
@@ -509,16 +509,16 @@ const app = new Vue({
 						})
 						.then((res) => res.json())
 						.then((data) =>  {
-							// console.log(data)
-							this.currentUser = data.currentUser
+
+							this.currentUser = data.wins
 
 						})
 						.catch((err) => console.error(err))
 					} else if (this.currentUser && self.player2.score === 8) {
-						fetch('/user' + this.currentUser._id, {
+						fetch('/users/' + this.currentUser._id, {
 							method: 'PUT',
 							body:JSON.stringify({
-								losses: this.currentUser.losses++
+								losses: Number(this.currentUser.losses) + 1
 							}),
 							headers: {
 								'Accept': 'application/json, text/plain, */*',
@@ -527,8 +527,8 @@ const app = new Vue({
 						})
 						.then((res) => res.json())
 						.then((data) =>  {
-							// console.log(data)
-							this.currentUser = data.currentUser
+
+							this.currentUser.losses = data.losses
 						})
 						.catch((err) => console.error(err))
 					}
@@ -669,12 +669,23 @@ const app = new Vue({
 				}
 			})
 			.catch((err) => console.error(err))
+			this.shuffleDeck()
 		},
 
 		getUserStats: function() {
+			fetch('/users/' + this.currentUser._id, {
+				method: 'GET'
+				})
+			.then((res) => {
+				return res.json()
+			})
+			.then((data) => {
+				// console.log(data);
+				this.currentUser = data
+			})
+			.catch((err) => console.log(err))
 
 			this.showStats = true
-
 		}
 
 	},

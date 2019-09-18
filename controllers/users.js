@@ -10,10 +10,18 @@ const bcrypt = require('bcrypt');
 //==========================
 // FIND ALL USERS
 //==========================
-users.get('/', (req, resp) => {
-    resp.json(req.session)
+users.get('/', (req, res) => {
+    res.json(req.session)
 });
 
+//==========================
+// FIND ONE SPECIFIC USER
+//==========================
+users.get('/:id', (req, res) => {
+	User.findById(req.params.id, (err, foundUser) => {
+		res.json(foundUser)
+	})
+})
 
 //==========================
 // CREATE A NEW USER
