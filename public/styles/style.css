@@ -40,6 +40,7 @@ body {
   text-align: center;
   padding: 0;
   margin: 0;
+  width: 100%;
 }
 
 h1 {
@@ -60,6 +61,7 @@ header {
 	padding: 15px;
 	margin: 0 auto;
 	z-index: 2;
+	width: 100%;
 }
 
 nav {
@@ -72,6 +74,7 @@ nav {
 	box-shadow: 5px 5px 5px var(--dark-gray);
 	padding: 5px;
 	margin: 0 auto;
+	width: 100%;
 
 }
 
@@ -130,6 +133,7 @@ footer a {
 	text-decoration: none;
 	color: whitesmoke;
 }
+
 /* ================= */
 /*   Auth / UnAuth   */
 /* ================= */
@@ -282,21 +286,18 @@ input[type="submit"]:hover, .form-submit-button:hover {
 /*   GAME BOARD      */
 /* ================= */
 
-#game-board {
-
-}
 
 #game-board h2 {
 	color: var(--darker-gold);
 	font-family: var(--title-font);
-	font-size: 30px;
+	font-size: 35px;
 }
 
 .king-card {
 	border-radius: 7px;
 	background: var(--butter);
 	border: 2px solid var(--darker-gold);
-	width: 180px;
+	width: 200px;
 	padding: 15px;
 	margin: 5px;
 	border: 2px solid var(--golden);
@@ -316,7 +317,7 @@ input[type="submit"]:hover, .form-submit-button:hover {
 
 #player-prompt p {
 	color: black;
-	font-size: 20px;
+	font-size: 30px;
 }
 
 #all-cards {
@@ -329,9 +330,9 @@ input[type="submit"]:hover, .form-submit-button:hover {
 	justify-content: center;
 }
 
-.game-alerts p {
-	font-size: 20px;
-}
+/* .game-alerts {
+	font-size: 50px;
+} */
 /* ================= */
 /*  SHUFFLE DECK     */
 /* ================= */
@@ -347,8 +348,8 @@ input[type="submit"]:hover, .form-submit-button:hover {
 	border-radius: 7px;
 	background: white;
 	border: 2px solid var(--darker-gold);
-	width: 150px;
-	height: 220px;
+	width: 120px;
+	height: 180px;
 	padding: 15px;
 	margin: 10px;
 	border: 2px solid var(--golden);

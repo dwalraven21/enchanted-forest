@@ -139,9 +139,9 @@
 				</modal>
 				<modal v-if="showStats" @close="showStats = false" id="user-stats-page">
 					<h3 slot="header">{{currentUser.name}}'s Stats</h3>
-					<div slot="body" class="game-alerts">
-						<p><b>Total Wins:</b> {{currentUser.wins}}</p>
-						<p><b>Total Losses:</b> {{currentUser.losses}}</p>
+					<div slot="body" >
+						<p class="game-alerts"><b>Total Wins:</b> {{currentUser.wins}}</p>
+						<p class="game-alerts"><b>Total Losses:</b> {{currentUser.losses}}</p>
 					</div>
 				</modal>
 			</div>
@@ -172,9 +172,10 @@
 				<div id="game-board">
 					<!-- KING CARD  -->
 					<h2>King Card</h2>
-					<div>
-						<img class="king-card" :src="kingCard.front" :key="kingCard.id">
-					</div>
+					<transition name="flip" tag="div">
+						<img v-if="!kingCard.flipped" class="king-card" :src="kingCard.front" key="back">
+						<img v-else class="king-card" key="front" :src="kingCard.back">
+					</transition>
 					<!-- PLAYER PROMPT  -->
 					<div id="player-prompt">
 						<p>{{playerTurn}}: {{message}}</p>
@@ -219,7 +220,7 @@
 			</footer>
 		</div>
 	<!-- VUE  -->
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
 	<!-- app.js -->
 	<script src="js/app.js"></script>
 	</body>

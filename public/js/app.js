@@ -532,16 +532,21 @@ const app = new Vue({
 						})
 						.catch((err) => console.error(err))
 					}
-				} else {				
+				} else {
+					self.kingCard.flipped = true;
+					setTimeout(function(){
+						self.randomIndex = Math.floor(Math.random() * self.kingDeck.length)
+						self.kingCard = self.kingDeck[self.randomIndex]
+					}, 1000)
+
 					// wait 2 seconds before prompting player to choose again
 				    setTimeout(function(){
 						// if not, change the king card
-						self.randomIndex = Math.floor(Math.random() * self.kingDeck.length)
-						self.kingCard = self.kingDeck[self.randomIndex]
+						self.kingCard.flipped = false;
 						self.message = "The new king card is " + self.kingCard.name;
 						card.flipped = !card.flipped
 						self.message2 = "Pick a card."
-					}, 2500)
+					}, 1500)
 				}
 
 			// if card is not a match, let player know
