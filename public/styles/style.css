@@ -79,8 +79,11 @@ nav {
 }
 
 @media only screen and (max-width: 600px) {
+	header {
+		width: 110%;
+	}
 	nav {
-		width: 105%;
+		width: 110%;
 	}
 }
 
