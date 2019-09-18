@@ -21,8 +21,8 @@ sessions.delete('/', (req, res) => {
 //==========================
 // FIND SESSION
 //==========================
-sessions.get('/', (req, resp)=>{
-    resp.status(200).json({
+sessions.get('/', (req, res)=>{
+    res.status(200).json({
       status: 200,
       message: "found session"
     });

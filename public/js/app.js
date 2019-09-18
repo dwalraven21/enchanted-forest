@@ -315,7 +315,11 @@ const app = new Vue({
 			this.player2.leader = false
 
 			// reset to player1 turn
-			this.playerTurn = player1.name
+			if (this.currentUser){
+				this.playerTurn = this.currentUser.name
+			} else {
+				this.playerTurn = "Player 1"
+			}
 
 			// rest king deck
 			this.kingDeck = [
@@ -442,85 +446,179 @@ const app = new Vue({
 		},
 
 		// when player clicks a card
+		// basically the entire game logic is in here
 	    flipCard: function(card){
 
-		// self becomes this in scope
-		var self = this;
+			// self becomes this in scope
+			var self = this;
 
-		// card back is revealed
-	      card.flipped = !card.flipped;
-		  self.message = "You found: " + card.name + "."
+			// card back is revealed
+		    card.flipped = !card.flipped;
+			self.message = "You found: " + card.name + "."
 
-		  // if card is a match, let player know
-		  if (self.kingCard.name == card.name) {
-			  self.message2 = "You win the King Card!"
+			// if card is a match, let player know
+			if (self.kingCard.name == card.name) {
+				self.message2 = "You win the King Card!"
 
-			  // card is added to user hand & removed from cards array
-			  // player score goes up by one
-			  self.kingDeck.splice((self.randomIndex), 1)
-			  if (self.playerTurn === player1.name){
-				  self.player1.hand.push(self.kingCard)
-				  self.player1.score++
-			  } else {
-				  self.player2.hand.push(self.kingCard)
-				  self.player2.score++
+				// card is added to user hand & removed from cards array
+				// player score goes up by one
+				self.kingDeck.splice((self.randomIndex), 1)
 
-			  }
-
-			  // check if player is the leader
-			  // update leader status
-			  if (self.player1.score > self.player2.score) {
-				  self.player1.leader = true;
-				  self.player2.leader = false;
-			  } else if (self.player2.score > self.player1.score) {
-				  self.player1.leader = false;
-				  self.player2.leader = true;
-			  } else {
-				  self.player1.leader = false;
-				  self.player2.leader = false;
-			  }
-
-			  // check if score is 8
-			  // if score is 8, player wins!
-			  if (self.player1.score === 8 || self.player2.score === 8) {
-				  self.message = "You Win!";
-				  self.message2 = "Choose 'Start New Game' to play again.";
-				  self.showCards = false;
-				  self.kingCard = kingCard;
-				  card.flipped = !card.flipped
-			  } else {
-			  // if not, change the king card
-				  self.randomIndex = Math.floor(Math.random() * self.kingDeck.length)
-				  self.kingCard = self.kingDeck[self.randomIndex]
-				// wait 2 seconds before prompting player to choose again
-			    setTimeout(function(){
-					self.message = "The new king card is " + self.kingCard.name;
-					card.flipped = !card.flipped
-					self.message2 = "Pick a card."
-				}, 2000)
-			  }
-
-		  // if card is not a match, let player know
-		  } else {
-			self.message2 = "Sorry, it's not a match."
-			// wait 2 seconds, then alternate player's turn
-			setTimeout(function(){
-				if (self.playerTurn === player1.name){
-					self.playerTurn = player2.name
+				if (self.playerTurn !== player2.name){
+					self.player1.hand.push(self.kingCard)
+					self.player1.score++
 				} else {
-					self.playerTurn = player1.name
+					self.player2.hand.push(self.kingCard)
+					self.player2.score++
+
 				}
-				//flip card and prompt player to pick a card
-				card.flipped = !card.flipped
-				self.message = "Pick a card."
-				self.message2 = '';
 
-			}, 2000);
-		  }
-	  },
+				// check if player is the leader
+				// update leader status
+				if (self.player1.score > self.player2.score) {
+					self.player1.leader = true;
+					self.player2.leader = false;
+				} else if (self.player2.score > self.player1.score) {
+					self.player1.leader = false;
+					self.player2.leader = true;
+				} else {
+					self.player1.leader = false;
+					self.player2.leader = false;
+				}
 
-		signUp: function (e) {
-			e.preventDefault();
+				// check if score is 8
+				// if score is 8, player wins!
+				if (self.player1.score === 8 || self.player2.score === 8) {
+					self.message = "You Win!";
+					self.message2 = "Choose 'Start New Game' to play again.";
+					self.showCards = false;
+					self.kingCard = kingCard;
+					card.flipped = !card.flipped
+
+					//if player is logged in, save update their wins or losses
+					if (this.currentUser && self.player1.score === 8) {
+						fetch('/user' + this.currentUser._id, {
+							method: 'PUT',
+							body:JSON.stringify({
+								wins: this.currentUser.wins++
+							}),
+							headers: {
+								'Accept': 'application/json, text/plain, */*',
+								'Content-Type': 'application/json'
+							 }
+						})
+						.then((res) => res.json())
+						.then((data) =>  {
+							// console.log(data)
+							this.currentUser = data.currentUser
+
+						})
+						.catch((err) => console.error(err))
+					} else if (this.currentUser && self.player2.score === 8) {
+						fetch('/user' + this.currentUser._id, {
+							method: 'PUT',
+							body:JSON.stringify({
+								losses: this.currentUser.losses++
+							}),
+							headers: {
+								'Accept': 'application/json, text/plain, */*',
+								'Content-Type': 'application/json'
+							}
+						})
+						.then((res) => res.json())
+						.then((data) =>  {
+							// console.log(data)
+							this.currentUser = data.currentUser
+						})
+						.catch((err) => console.error(err))
+					}
+				} else {
+				// if not, change the king card
+					self.randomIndex = Math.floor(Math.random() * self.kingDeck.length)
+					self.kingCard = self.kingDeck[self.randomIndex]
+					// wait 2 seconds before prompting player to choose again
+				    setTimeout(function(){
+						self.message = "The new king card is " + self.kingCard.name;
+						card.flipped = !card.flipped
+						self.message2 = "Pick a card."
+					}, 2000)
+				}
+
+			// if card is not a match, let player know
+			} else {
+				self.message2 = "Sorry, it's not a match."
+				// wait 2 seconds, then alternate player's turn
+				setTimeout(function(){
+					if (self.playerTurn !== player2.name){
+						self.playerTurn = player2.name
+					} else {
+						self.playerTurn = player1.name
+					}
+					//flip card and prompt player to pick a card
+					card.flipped = !card.flipped
+					self.message = "Pick a card."
+					self.message2 = '';
+
+				}, 2000);
+			}
+		},
+
+		goApp: function() {
+			fetch('/users', {
+				method: 'GET'
+				})
+			.then((res) => {
+				return res.json()
+
+			})
+			.then((data) => {
+				if (data.currentUser) {
+				  this.currentUser = data.currentUser
+				  this.authView = true;
+				  this.player1.name = this.currentUser.name
+				} else {
+				  this.authView = false;
+				}
+			})
+			.catch((err) => console.log(err))
+		},
+
+		logIn: function () {
+
+			if (!this.username) {
+				alert('Username required.');
+			} else if (!this.password) {
+				alert('Password required.');
+			} else {
+				fetch('/sessions', {
+					method: 'POST',
+					body:JSON.stringify({
+						username: this.username,
+						password: this.password
+					}),
+					headers: {
+						'Accept': 'application/json, text/plain, */*',
+						'Content-Type': 'application/json'
+					 }
+				})
+				.then((res) => {
+					return res.json()
+				})
+				.then((data) =>  {
+					// console.log(data)
+					if (data.status === 201){
+						this.showLogin = false;
+						this.goApp();
+					} else {
+						alert("Sorry, something went wrong. Try again!")
+					}
+
+				})
+				.catch((err) => console.error(err))
+			}
+		},
+
+		signUp: function () {
 
 			if (!this.name) {
 				alert('Name required.');
@@ -540,39 +638,16 @@ const app = new Vue({
 				        'Accept': 'application/json, text/plain, */*',
 				        'Content-Type': 'application/json'
 				     }
-				}).then((res) => res.json())
-				.then((data) =>  {
-					console.log(data)
-					this.authView = true;
-					this.showLogin = false;
 				})
-				.catch((err) => console.error(err))
-			}
-		},
-
-		logIn: function (e) {
-			e.preventDefault();
-
-			if (!this.username) {
-				alert('Username required.');
-			} else if (!this.password) {
-				alert('Password required.');
-			} else {
-				fetch('/sessions', {
-					method: 'POST',
-					body:JSON.stringify({
-						username: this.username,
-						password: this.password
-					}),
-					headers: {
-				        'Accept': 'application/json, text/plain, */*',
-				        'Content-Type': 'application/json'
-				     }
-				}).then((res) => res.json())
+				.then((res) => res.json())
 				.then((data) =>  {
-					console.log(data)
-					this.authView = true;
-					this.showLogin = false;
+					// console.log(data)
+					if (data.status === 201) {
+						this.showSignup = false;
+						this.logIn();
+					} else {
+						alert("Sorry, something went wrong. Try again!")
+					}
 				})
 				.catch((err) => console.error(err))
 			}
@@ -581,26 +656,32 @@ const app = new Vue({
 		logOut: function() {
 			fetch('/sessions', {
 			method: 'DELETE'
-			}).then((res) => res.json())
+			})
+			.then((res) => res.json())
 			.then((data) =>  {
-				console.log(data)
-				this.authView = false;
+				// console.log(data)
+				if (data.status === 200) {
+					this.authView = false;
+					this.currentUser = null;
+					this.player1.name = "Player 1"
+				} else {
+					alert("Sorry, something went wrong. Try again!")
+				}
 			})
 			.catch((err) => console.error(err))
 		},
 
 		getUserStats: function() {
-			fetch('/users')
-			.then((res) => {
-				this.currentUser = res.data.currentUser
-			})
-			.catch((err) => console.error(err))
-		},
+
+			this.showStats = true
+
+		}
 
 	},
 	// on page load start a new game
 	beforeMount(){
 		this.shuffleDeck()
+		this.goApp()
 
 	 },
 })

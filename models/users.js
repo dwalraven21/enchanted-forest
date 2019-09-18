@@ -18,7 +18,7 @@ const userSchema = Schema({
 		type: Number,
 		default:0
 	},
-	loses: {
+	losses: {
 		type: Number,
 		default:0
 	}

@@ -60,7 +60,7 @@
 				</div>
 				<!-- Auth View -->
 				<div v-if="authView" id='auth-buttons'>
-					<button id='view-stats' @click="showStats = true">View My Stats</button>
+					<button id='view-stats' @click="getUserStats">View My Stats</button>
 					<button id='logout' @click="logOut">Log Out</button>
 				</div>
 			</header>
@@ -107,7 +107,7 @@
 							</div>
 							<div>
 								<label>Password</label>
-								<input type="text" v-model="password">
+								<input type="password" v-model="password">
 							</div><br/>
 							<div>
 								<button class="form-submit-button">Log In</button>
@@ -129,7 +129,7 @@
 							</div>
 							<div>
 								<label>Password</label>
-								<input type="text" v-model="password">
+								<input type="password" v-model="password">
 							</div><br/>
 							<div>
 								<button class="form-submit-button">Sign Up</button>
@@ -138,10 +138,10 @@
 					</div>
 				</modal>
 				<modal v-if="showStats" @close="showStats = false" id="user-stats-page">
-					<h3 slot="header">Player Stats</h3>
+					<h3 slot="header">{{currentUser.name}}'s Stats</h3>
 					<div slot="body">
-						<p><b>Total Wins:</b> 0</p>
-						<p><b>Total Wins:</b> 0</p>
+						<p><b>Total Wins:</b> {{currentUser.wins}}</p>
+						<p><b>Total Losses:</b> {{currentUser.losses}}</p>
 					</div>
 				</modal>
 			</div>
@@ -150,7 +150,8 @@
 				<!-- PLAYER CARDS -->
 				<div :class="{ 'player-turn': (playerTurn === player1.name), 'player-cards': (playerTurn !== player1.name) }">
 					<!-- NAME -->
-					<h3>{{player1.name}}</h3>
+					<h3 v-if='currentUser'>{{currentUser.name}}</h3>
+					<h3 v-if='!currentUser'>{{player1.name}}</h3>
 					<!-- LEADER STATUS -->
 					<div v-if='player1.leader' class='crown'>
 						<img src="images/crown.png" alt="leader status">

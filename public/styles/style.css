@@ -213,7 +213,7 @@ label {
   color: var(--darker-gold);
 }
 
-input[type="text"] {
+input[type="text"], input[type="password"] {
   padding: 10px;
   width: 50%;
   border: 1px solid var(--darker-gold);
