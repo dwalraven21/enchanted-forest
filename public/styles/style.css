@@ -33,7 +33,7 @@
 	border: 1px solid gold;
 } */
 
-body, html {
+body {
   background: whitesmoke;
   font-family: var(--main-font);
   color: black;
@@ -61,7 +61,6 @@ header {
 	padding: 15px;
 	margin: 0 auto;
 	z-index: 2;
-	width: 100%;
 }
 
 nav {
@@ -74,11 +73,13 @@ nav {
 	box-shadow: 5px 5px 5px var(--dark-gray);
 	padding: 5px;
 	margin: 0 auto;
-	width: 100%;
 
 }
 
 @media only screen and (max-width: 600px) {
+	body {
+	width: 105%;
+	}
 	header {
 		width: 110%;
 	}
@@ -125,7 +126,6 @@ main {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: space-between;
-	width: 100%;
 }
 
 @media only screen and (max-width: 600px) {
@@ -133,7 +133,7 @@ main {
 	main {
 		flex-flow: column nowrap;
 		margin: 0;
-		width: 105%;
+		width: 110%;
 	}
 }
 
@@ -151,7 +151,8 @@ footer {
 
 @media only screen and (max-width: 600px) {
 	footer {
-		width: 110%;
+		padding: 10px;
+		width: 115%;
 	}
 }
 
