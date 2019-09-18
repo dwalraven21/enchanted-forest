@@ -328,6 +328,10 @@ input[type="submit"]:hover, .form-submit-button:hover {
 	flex-flow: row wrap;
 	justify-content: center;
 }
+
+.game-alerts p {
+	font-size: 20px;
+}
 /* ================= */
 /*  SHUFFLE DECK     */
 /* ================= */

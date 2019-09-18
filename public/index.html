@@ -139,7 +139,7 @@
 				</modal>
 				<modal v-if="showStats" @close="showStats = false" id="user-stats-page">
 					<h3 slot="header">{{currentUser.name}}'s Stats</h3>
-					<div slot="body">
+					<div slot="body" class="game-alerts">
 						<p><b>Total Wins:</b> {{currentUser.wins}}</p>
 						<p><b>Total Losses:</b> {{currentUser.losses}}</p>
 					</div>
