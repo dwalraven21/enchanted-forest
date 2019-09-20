@@ -685,13 +685,13 @@ const app = new Vue({
 				return res.json()
 			})
 			.then((data) => {
-				// console.log(data);
+				console.log(data);
 				this.currentUser = data
 			})
 			.catch((err) => console.log(err))
 
 			this.showStats = true
-		}
+		},
 
 	},
 	// on page load start a new game
